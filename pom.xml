@@ -16,6 +16,7 @@
 
     <modules>
         <module>hello-provider</module>
+        <module>hello-consumer</module>
     </modules>
 
     <properties>
