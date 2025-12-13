@@ -1,0 +1,21 @@
+# hello-provider 模块的应用名字，也是微服务的默认名字
+spring:
+  application:
+    name: hello-provider-service
+  # Nacos 服务器的地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  # Nacos 服务器的实际地址
+
+# hello-provider 模块的 Tomcat 容器所监听的端口
+server:
+  port: 8081
+
+# 向 Spring Boot Actuator 监控器暴露所有的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
