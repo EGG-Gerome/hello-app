@@ -4,6 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 注意：本项目为学习 Spring Cloud 微服务的 demo，使用书本指定的 Spring Boot 3.0.2 版本 -->
+    <!-- 存在 Mend.io 提示的漏洞，但学习环境中无实际风险，暂不升级（避免与书本代码不一致） -->
+    <!-- 生产环境需参考漏洞修复方案升级依赖版本 -->
+
     <groupId>cloud.tangyuan</groupId>
     <artifactId>hello-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>

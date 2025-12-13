@@ -25,6 +25,18 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Spring Cloud Starter -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+
+        <!-- Spring Cloud Bootstrap (用于Cloud Bootstrap功能) -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
         <!-- Spring Cloud Alibaba Nacos Discovery -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -52,6 +64,13 @@
             <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Spring Boot Actuator（监控端点） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
