@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(value = "hello-provider-service")
 public interface HelloFeignService {
-    @GetMapping(value = "/greet/{username}")
+    @GetMapping("/greet/{username}")
     String sayHello(@PathVariable("username") String username);
+
+     default String sayHello(){
+        return sayHello("Stranger");
+    }
 }
