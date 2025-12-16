@@ -1,7 +1,7 @@
 # hello-consumer 模块的应用名字，也是微服务的默认名字
 spring:
   application:
-    name: hello-consumer
+    name: hello-consumer-service
   # Nacos 服务器的地址
   cloud:
     nacos:
@@ -10,6 +10,13 @@ spring:
         naming-load-cache-at-start: false  # 禁用启动时加载缓存，确保获取最新的服务实例
         prefer-ip-address: true
         ip: 127.0.0.1  # 使用本地回环地址注册服务
+        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
+        group: MY_GROUP
+      config: # 注意：是config，不是discovery
+        server-addr: localhost:8848
+        file-extension: yaml  # 注意：是单数形式！
+        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
+        group: MY_GROUP
 
 # hello-provider 模块的 Tomcat 容器所监听的端口
 server:
