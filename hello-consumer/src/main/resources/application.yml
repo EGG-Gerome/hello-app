@@ -7,6 +7,9 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848  # Nacos 服务器的实际地址
+        naming-load-cache-at-start: false  # 禁用启动时加载缓存，确保获取最新的服务实例
+        prefer-ip-address: true
+        ip: 127.0.0.1  # 使用本地回环地址注册服务
 
 # hello-provider 模块的 Tomcat 容器所监听的端口
 server:
