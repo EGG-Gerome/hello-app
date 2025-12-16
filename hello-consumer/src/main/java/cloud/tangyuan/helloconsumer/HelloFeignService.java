@@ -9,7 +9,6 @@ public interface HelloFeignService {
     @GetMapping("/greet/{username}")
     String sayHello(@PathVariable("username") String username);
 
-     default String sayHello(){
-        return sayHello("Stranger");
-    }
+    @GetMapping("/greet")
+    String sayHello();
 }

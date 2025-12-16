@@ -16,26 +16,25 @@ import java.util.List;
 @RestController
 public class HelloConsumerController {
 
-//    这个复杂工厂模式以后再拓展（要写动态bean，ApplicationContext）
-//    private final HelloFeignService helloFeignService;
-//    public HelloConsumerController(HelloFeignService helloFeignService) {
-//        this.helloFeignService = helloFeignService;
-//    }
-    @Autowired
-    private HelloFeignService helloFeignService;
+    private final HelloFeignService helloFeignService;
+    private final DiscoveryClient discoveryClient;
+    private final LoadBalancerClient loadBalancerClient;
+    private final RestTemplate loadBalancedRestTemplate;
+    private final RestTemplate restTemplate;
 
-    @Autowired
-    private DiscoveryClient discoveryClient;
-
-    @Autowired
-    private LoadBalancerClient loadBalancerClient;
-
-    @Autowired
-    @Qualifier("loadBalancedRestTemplate")
-    private RestTemplate loadBalancedRestTemplate;
-
-    @Autowired
-    private RestTemplate restTemplate;
+    // 构造函数注入，Spring Boot 3.0 推荐的注入方式
+    public HelloConsumerController(
+            HelloFeignService helloFeignService,
+            DiscoveryClient discoveryClient,
+            LoadBalancerClient loadBalancerClient,
+            @Qualifier("loadBalancedRestTemplate") RestTemplate loadBalancedRestTemplate,
+            RestTemplate restTemplate) {
+        this.helloFeignService = helloFeignService;
+        this.discoveryClient = discoveryClient;
+        this.loadBalancerClient = loadBalancerClient;
+        this.loadBalancedRestTemplate = loadBalancedRestTemplate;
+        this.restTemplate = restTemplate;
+    }
 
     // 使用 Feign 调用
     @GetMapping("/enter/{username}")
@@ -80,9 +79,45 @@ public class HelloConsumerController {
         // 指定微服务的虚拟地址
         String rootUrl = "http://hello-provider-service";
         String serviceUrl = "%s/greet/%s".formatted(rootUrl, username);
+
         ResponseEntity<String> responseEntity = loadBalancedRestTemplate.getForEntity(serviceUrl, String.class);
         String result = responseEntity.getBody().toString();
         return result;
+    }
+
+    // 简单测试端点，不依赖其他服务
+    @GetMapping("/test")
+    public String test() {
+        return "Hello from HelloConsumer! This is a simple test endpoint.";
+    }
+
+    // 测试 DiscoveryClient 获取服务实例
+    @GetMapping("/test-discovery")
+    public String testDiscovery() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("hello-provider-service");
+        if (instances.isEmpty()) {
+            return "No instances found for hello-provider-service";
+        }
+        StringBuilder result = new StringBuilder("Found instances:\n");
+        for (ServiceInstance instance : instances) {
+            result.append("Instance: ")
+                  .append(instance.getUri())
+                  .append(" (IP: ")
+                  .append(instance.getHost())
+                  .append(":")
+                  .append(instance.getPort())
+                  .append(")\n");
+        }
+        return result.toString();
+    }
+
+    // 直接调用 provider 的本地地址，绕过服务发现
+    @GetMapping("/test-direct")
+    public String testDirect() {
+        String serviceUrl = "http://localhost:8081/greet/Y";
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(serviceUrl, String.class);
+        String result = responseEntity.getBody();
+        return "Direct call result: " + result;
     }
 
 }
