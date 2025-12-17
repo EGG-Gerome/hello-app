@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -118,6 +119,21 @@ public class HelloConsumerController {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(serviceUrl, String.class);
         String result = responseEntity.getBody();
         return "Direct call result: " + result;
+    }
+
+    @GetMapping("/list")
+    public String showServices(){
+        // 获得微服务的名字列表
+        List<String> services = discoveryClient.getServices();
+        for(String service: services){
+            System.out.println("服务名：%s".formatted(service));
+        }
+        // 根据微服务的名字列表获得相应的微服务实例列表
+        List<ServiceInstance> instances = discoveryClient.getInstances("hello-provider-service");
+        for(ServiceInstance instance: instances){
+            System.out.println("URL: %s".formatted(instance.getUri()));
+        }
+        return "ok";
     }
 
 }
