@@ -1,5 +1,6 @@
 package cloud.tangyuan.helloconfig;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,15 @@ public class ConfigController {
 
     @GetMapping("/config01")
     public String getConfig01(){
+        String result = "db.username=%s, db.password=%s".formatted(username, password);
+        return result;
+    }
+
+    @Autowired
+    private MyProperties myProperties;
+
+    @GetMapping("/config02")
+    public String getConfig(){
         String result = "db.username=%s, db.password=%s".formatted(username, password);
         return result;
     }
