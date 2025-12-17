@@ -21,7 +21,10 @@ public class HelloConfigApplication {
 			String password = applicationContext
 					.getEnvironment()
 					.getProperty("db.password");
-			System.out.println("db.username=%s, db.username=%s".formatted(username, password));
+			String host = applicationContext
+					.getEnvironment()
+					.getProperty("db.host");
+			System.out.println("db.username=%s, db.password=%s, db.host=%s".formatted(username, password, host));
 			TimeUnit.SECONDS.sleep(1);	// 睡眠 1s
 		}
 	}

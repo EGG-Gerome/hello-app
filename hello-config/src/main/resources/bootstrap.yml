@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: hello-config-service
+  profiles:
+    active: develop
   cloud:
     nacos:
       discovery:
@@ -15,7 +17,7 @@ spring:
         server-addr: 127.0.0.1:8848
         namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
         group: MY_GROUP
-        file-extension: yaml
+        file-extension: yml
 
 management:
   endpoints:

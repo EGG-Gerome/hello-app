@@ -14,7 +14,7 @@ spring:
         group: MY_GROUP
       config: # 注意：是config，不是discovery
         server-addr: localhost:8848
-        file-extension: yaml  # 注意：是单数形式！
+        file-extension: yml  # 注意：是单数形式！
         namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
         group: MY_GROUP
 
