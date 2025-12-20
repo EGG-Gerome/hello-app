@@ -1,6 +1,5 @@
 spring:
   application:
     name: hello-config-service
-  profiles:
-    active: develop
-
+#  profiles:
+#    active: develop

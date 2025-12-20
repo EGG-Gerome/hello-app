@@ -4,20 +4,33 @@ server:
 spring:
   application:
     name: hello-config-service
-  profiles:
-    active: develop
+#  profiles:
+#    active: develop
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
-        group: MY_GROUP
+        server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
+#        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
+#        group: MY_GROUP
         ip: 127.0.0.1
       config:
-        server-addr: 127.0.0.1:8848
-        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
-        group: MY_GROUP
+        server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
+#        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
+#        group: MY_GROUP
         file-extension: yml
+        refresh-enabled: true
+#        # 位于 MY_GROUP 组中，不支持动态刷新配置属性
+#        extension-configs[0]:
+#          data-id: config01.yml
+#          group: MY_GROUP
+#        # 位于 GLOBAL_GROUP 组中，不支持动态刷新配置属性
+#        extension-configs[1]:
+#          data-id: config02.yml
+#          group: GLOBAL_GROUP
+#        # 位于 LOCAL_GROUP 组中，支持动态刷新属性配置
+#        extension-configs[2]:
+#          data-id: config03.yml
+#          group: LOCAL_GROUP
 
 management:
   endpoints:
