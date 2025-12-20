@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.lang.module.Configuration;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
@@ -21,11 +20,11 @@ public class HelloConfigApplication {
 			String password = applicationContext
 					.getEnvironment()
 					.getProperty("db.password");
-			String host = applicationContext
-					.getEnvironment()
-					.getProperty("db.host");
-			System.out.println("db.username=%s, db.password=%s, db.host=%s".formatted(username, password, host));
-			TimeUnit.SECONDS.sleep(1);	// 睡眠 1s
+			// String host = applicationContext
+			// img.png.getEnvironment()
+			// img.png.getProperty("db.host");
+			System.out.println("db.username=%s, db.password=%s".formatted(username, password));
+			TimeUnit.SECONDS.sleep(1);// 睡眠 1s
 		}
 	}
 
