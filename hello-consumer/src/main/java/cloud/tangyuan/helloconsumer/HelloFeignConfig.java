@@ -1,6 +1,7 @@
 package cloud.tangyuan.helloconsumer;
 
 import feign.Logger;
+import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,5 +17,16 @@ public class HelloFeignConfig {
     @Bean
     Logger.Level feignLoggerLevel() {
         return Logger.Level.FULL;
+    }
+    
+    /**
+     * 添加请求拦截器，显式设置Accept-Encoding头，确保压缩生效
+     */
+    @Bean
+    public RequestInterceptor requestInterceptor() {
+        // template 就是传入 apply 函数式方法的参数，这里是超级省略的Lambda，连()都省略了
+        return template -> {
+            template.header("Accept-Encoding", "gzip, deflate");
+        };
     }
 }

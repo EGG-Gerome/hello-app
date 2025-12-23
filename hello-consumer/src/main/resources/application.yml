@@ -8,7 +8,19 @@ provider:
 
 logging:
   level:
-    cloud:
-      tangyuan:
-        helloconsumer:
-          HelloFeignService: DEBUG
+#    包名天然用.分隔，不管是 YAML 还是 Properties，这个.都必须保留；
+    cloud.tangyuan.helloconsumer.HelloFeignService: DEBUG
+#    类名的命名空间也天然用: 分隔。
+    feign: DEBUG
+    feign.Logger: DEBUG
+    feign.Request: DEBUG
+    feign.Response: DEBUG
+
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: text/*, application/*, application/json, application/xml, text/xml
+      min-request-size: 2048
+    response:
+      enabled: true
