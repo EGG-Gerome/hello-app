@@ -4,11 +4,13 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "${provider.name}")
+// 指定 HelloFeignConfig 日志配置类
+@FeignClient(value = "${provider.name}", path = "/user", configuration = HelloFeignConfig.class)
 public interface HelloFeignService {
     @GetMapping("/greet/{username}")
     String sayHello(@PathVariable("username") String username);
 
     @GetMapping("/greet")
     String sayHello();
+
 }

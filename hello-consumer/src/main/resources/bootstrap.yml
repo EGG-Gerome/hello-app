@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: hello-consumer-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
+        ip: 127.0.0.1
+      config:
+        server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
+        file-extension: yml
+        refresh-enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
