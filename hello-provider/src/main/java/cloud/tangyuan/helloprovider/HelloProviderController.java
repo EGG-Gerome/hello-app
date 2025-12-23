@@ -1,10 +1,7 @@
 package cloud.tangyuan.helloprovider;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 //@RestController
 //public class HelloProviderController {
@@ -19,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/user")
 public class HelloProviderController {
     // 把 servicePort 变量与 server.port 配置属性绑定
     @Value("${server.port}")
