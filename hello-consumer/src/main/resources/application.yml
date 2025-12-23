@@ -4,7 +4,7 @@ spring:
     name: hello-consumer-service
 
 provider:
-  name: hello-provider-service
+  name: 127.0.0.1:8081
 
 logging:
   level:
@@ -24,3 +24,11 @@ feign:
       min-request-size: 2048
     response:
       enabled: true
+  client:
+    config:
+      hello-provider-service:
+        connectTimeout: 1000    #   连接超时的时间为 1s
+        readTimeout: 5000       #   连接超时的时间为 5s
+      hello-consumer-service:
+        connectTimeout: 2000
+        readTimeout: 10000

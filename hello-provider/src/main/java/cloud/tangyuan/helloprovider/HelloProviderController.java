@@ -3,6 +3,8 @@ package cloud.tangyuan.helloprovider;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.TimeUnit;
+
 //@RestController
 //public class HelloProviderController {
 //    // 关键点1：多路径用{}包裹（数组语法），显式指定value属性（也可省略value=，但{}必须有）
@@ -33,8 +35,15 @@ public class HelloProviderController {
 
     @GetMapping("/greet/{username}")
     public String greet(@PathVariable("username") String username){
+        System.out.println("Before sleep: " + System.currentTimeMillis());
         String msg = null;
+        try{
+            TimeUnit.SECONDS.sleep(60);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         msg = "Hello, %s <br>Service Name: %s <br>Service Port: %s".formatted(username, serviceName, servicePort);
+        System.out.println("After sleep: " + System.currentTimeMillis());
         return msg;
     }
 

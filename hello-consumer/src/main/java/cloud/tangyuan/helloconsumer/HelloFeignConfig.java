@@ -1,6 +1,7 @@
 package cloud.tangyuan.helloconsumer;
 
 import feign.Logger;
+import feign.Request; 
 import feign.RequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,11 +21,19 @@ public class HelloFeignConfig {
     }
     
     /**
+     * 设置Feign的超时时间
+     */
+    @Bean
+    public Request.Options requestOptions() {
+        // 连接超时时间为1秒，读取超时时间为5秒
+        return new Request.Options(1000, 5000);
+    }
+    
+    /**
      * 添加请求拦截器，显式设置Accept-Encoding头，确保压缩生效
      */
     @Bean
     public RequestInterceptor requestInterceptor() {
-        // template 就是传入 apply 函数式方法的参数，这里是超级省略的Lambda，连()都省略了
         return template -> {
             template.header("Accept-Encoding", "gzip, deflate");
         };
