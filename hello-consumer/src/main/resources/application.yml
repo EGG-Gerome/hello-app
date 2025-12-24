@@ -17,6 +17,8 @@ logging:
     feign.Response: DEBUG
 
 feign:
+  sentinel:
+    enabled: true  # 启用Feign的Sentinel断路器功能，必须配置才能使用fallback
   compression:
     request:
       enabled: true
