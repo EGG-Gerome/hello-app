@@ -2,10 +2,13 @@ package cloud.tangyuan.helloconsumer;
 
 import cloud.tangyuan.hellocommon.Name;
 import cloud.tangyuan.hellocommon.Result;
+import cloud.tangyuan.hellocommon.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @FeignClient(name = "hello-provider-service", url = "http://${provider.name}", path = "/user",
@@ -22,4 +25,6 @@ public interface HelloFeignService {
     @GetMapping("/testname")
     Result testName(@SpringQueryMap Name name);
 
+    @PostMapping("/testuser")
+    Result testUser(@RequestBody User user);
 }

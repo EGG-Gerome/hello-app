@@ -3,6 +3,7 @@ package cloud.tangyuan.helloprovider;
 
 import cloud.tangyuan.hellocommon.Name;
 import cloud.tangyuan.hellocommon.Result;
+import cloud.tangyuan.hellocommon.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;
@@ -57,6 +58,13 @@ public class HelloProviderController {
     @GetMapping("/testname")
     public Result testName(@SpringQueryMap Name name){
         System.out.println("firstname: %s, lastname: %s".formatted(name.getFirstname(), name.getLastname()) );
+        return new Result(100, "OK");
+    }
+
+    @PostMapping("/testuser")
+    public Result testUser(@RequestBody User user){
+        System.out.println("id: %s, name: %s %s".formatted(user.getId(),
+                user.getName().getFirstname(), user.getName().getLastname()));
         return new Result(100, "OK");
     }
 }

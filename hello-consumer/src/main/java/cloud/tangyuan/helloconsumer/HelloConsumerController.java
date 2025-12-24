@@ -2,6 +2,7 @@ package cloud.tangyuan.helloconsumer;
 
 import cloud.tangyuan.hellocommon.Name;
 import cloud.tangyuan.hellocommon.Result;
+import cloud.tangyuan.hellocommon.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
@@ -143,5 +144,12 @@ public class HelloConsumerController {
     public Result testName(){
         Name name = new Name("Gerome", "Windsor");
         return helloFeignService.testName(name);
+    }
+
+    @GetMapping("testuser")
+    public Result testUser(){
+        Name name = new Name("Gerome", "Windsor");
+        User user = new User(01, name);
+        return helloFeignService.testUser(user);
     }
 }
