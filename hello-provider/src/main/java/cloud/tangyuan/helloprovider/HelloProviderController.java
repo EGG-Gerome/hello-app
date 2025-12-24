@@ -35,6 +35,9 @@ public class HelloProviderController {
 
     @GetMapping("/greet/{username}")
     public String greet(@PathVariable("username") String username){
+        if(username!=null && username.equals("Monster")) {
+            throw new IllegalArgumentException(username);
+        }
         System.out.println("Before sleep: " + System.currentTimeMillis());
         String msg = null;
         try{
