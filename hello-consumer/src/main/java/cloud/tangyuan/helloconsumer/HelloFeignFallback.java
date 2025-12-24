@@ -19,13 +19,15 @@ public class HelloFeignFallback implements HelloFeignService{
     @Override
     public String sayHello(@PathVariable String username) {
         // 输出详细异常信息
-        return "%s, something is wrong<br>%s".formatted(username, cause.getStackTrace());
+        String errorDetails = cause != null ? getStackTrace(cause) : "Unknown error";
+        return "%s, something is wrong<br>%s".formatted(username, errorDetails);
     }
 
     @Override
     public String sayHello() {
         // 输出详细异常信息
-        return "%s, something is wrong<br>%s".formatted( cause.getStackTrace());
+        String errorDetails = cause != null ? getStackTrace(cause) : "Unknown error";
+        return "something is wrong<br>%s".formatted(errorDetails);
     }
 
     // 实用方法：获得异常的详细信息
