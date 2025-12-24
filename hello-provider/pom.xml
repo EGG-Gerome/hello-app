@@ -79,6 +79,13 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- hello-common -->
+        <dependency>
+            <groupId>cloud.tangyuan</groupId>
+            <artifactId>hello-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>

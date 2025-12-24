@@ -15,6 +15,7 @@
     <description>hello-app</description>
 
     <modules>
+        <module>hello-common</module>
         <module>hello-provider</module>
         <module>hello-consumer</module>
         <module>hello-config</module>
