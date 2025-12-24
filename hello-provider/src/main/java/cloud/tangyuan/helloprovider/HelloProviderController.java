@@ -1,6 +1,10 @@
+// 这个其实叫 HelloConsumerConfig 更好，因为这个是 Bean 配置类
 package cloud.tangyuan.helloprovider;
 
+import cloud.tangyuan.hellocommon.Name;
+import cloud.tangyuan.hellocommon.Result;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.TimeUnit;
@@ -50,4 +54,9 @@ public class HelloProviderController {
         return msg;
     }
 
+    @GetMapping("/testname")
+    public Result testName(@SpringQueryMap Name name){
+        System.out.println("firstname: %s, lastname: %s".formatted(name.getFirstname(), name.getLastname()) );
+        return new Result(100, "OK");
+    }
 }

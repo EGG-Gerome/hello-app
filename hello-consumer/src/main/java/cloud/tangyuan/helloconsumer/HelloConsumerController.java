@@ -1,5 +1,7 @@
 package cloud.tangyuan.helloconsumer;
 
+import cloud.tangyuan.hellocommon.Name;
+import cloud.tangyuan.hellocommon.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
@@ -136,4 +138,10 @@ public class HelloConsumerController {
         return "ok";
     }
 
+    // 测试传递简单对象功能
+    @GetMapping("/testname")
+    public Result testName(){
+        Name name = new Name("Gerome", "Windsor");
+        return helloFeignService.testName(name);
+    }
 }

@@ -1,5 +1,7 @@
 package cloud.tangyuan.helloconsumer;
 
+import cloud.tangyuan.hellocommon.Name;
+import cloud.tangyuan.hellocommon.Result;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -42,6 +44,10 @@ public class HelloFeignFallback implements HelloFeignService{
         }
     }
 
+    @Override
+    public Result testName(Name name) {
+        return null;
+    }
 }
 
 

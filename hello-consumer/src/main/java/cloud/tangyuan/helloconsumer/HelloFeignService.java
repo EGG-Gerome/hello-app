@@ -1,6 +1,9 @@
 package cloud.tangyuan.helloconsumer;
 
+import cloud.tangyuan.hellocommon.Name;
+import cloud.tangyuan.hellocommon.Result;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -15,5 +18,8 @@ public interface HelloFeignService {
 
     @GetMapping("/greet")
     String sayHello();
+
+    @GetMapping("/testname")
+    Result testName(@SpringQueryMap Name name);
 
 }
