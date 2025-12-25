@@ -1,3 +1,7 @@
+# hello-provider 模块的 Tomcat 容器所监听的端口
+server:
+  port: 8081
+
 # hello-provider 模块的应用名字，也是微服务的默认名字
 spring:
   application:
@@ -17,14 +21,30 @@ spring:
 #        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
 #        group: MY_GROUP
 
-# hello-provider 模块的 Tomcat 容器所监听的端口
-server:
-  port: 8081
-
 # 向 Spring Boot Actuator 监控器暴露所有的端点
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
+# Dubbo 配置
+dubbo:
+  # 应用配置
+  application:
+    name: ${spring.application.name}
+  # 扫描包，用于扫描 Dubbo 服务实现
+  scan:
+    base-packages: cloud.tangyuan.helloprovider.service
+  # 协议配置
+  protocol:
+    name: dubbo
+    port: -1  # -1 表示随机端口
+  # 注册中心配置，使用 Nacos 作为注册中心
+  registry:
+    address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
+  # 服务配置
+  provider:
+    timeout: 3000
+    retries: 2
 

@@ -65,6 +65,30 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+            <!-- hello-common -->
+            <dependency>
+                <groupId>cloud.tangyuan</groupId>
+                <artifactId>hello-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- hello-provider -->
+            <dependency>
+                <groupId>cloud.tangyuan</groupId>
+                <artifactId>hello-provider</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- hello-consumer -->
+            <dependency>
+                <groupId>cloud.tangyuan</groupId>
+                <artifactId>hello-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- hello-config -->
+            <dependency>
+                <groupId>cloud.tangyuan</groupId>
+                <artifactId>hello-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
