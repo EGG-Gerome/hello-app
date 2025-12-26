@@ -5,6 +5,10 @@ spring:
   main:
     allow-bean-definition-overriding: true
     allow-circular-references: true
+  cloud:
+    nacos:
+      discovery:
+        enabled: false  # 禁用Spring Cloud自动服务发现，避免与Dubbo冲突
 
 provider:
   name: 127.0.0.1:8081
@@ -42,12 +46,32 @@ feign:
 dubbo:
   application:
     name: ${spring.application.name}
+    register-mode: all  # 同时注册接口级和应用级
+    register-consumer: true  # Dubbo 3.2.0中启用消费者注册的正确配置
+    parameters:
+      application: ${spring.application.name}  # 显式传递应用名给Nacos
+      appname: ${spring.application.name}  # 兼容不同版本的Nacos客户端
+      dubbo.application.name: ${spring.application.name}  # Dubbo应用名称
+  # 扫描包，用于扫描 Dubbo 服务实现
+  scan:
+    base-packages: cloud.tangyuan.helloconsumer
+  qos:
+    enable: false  # 禁用QOS服务，避免端口22222冲突
   cloud:
     subscribed-service: hello-provider-service
   registry:
     address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
     username: nacos
     password: nacos
+    parameters:
+      application: ${spring.application.name}  # 在注册中心配置中显式指定应用名称
+      appname: ${spring.application.name}
   protocol:
     name: dubbo
     port: -1
+
+# Nacos客户端配置
+nacos:
+  client:
+    application:
+      name: ${spring.application.name}  # 明确设置Nacos客户端应用名称

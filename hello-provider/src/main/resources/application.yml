@@ -10,20 +10,6 @@ spring:
   main:
     allow-bean-definition-overriding: true
     allow-circular-references: true
-    # Nacos 服务器的地址
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
-        prefer-ip-address: true
-        ip: 127.0.0.1  # 使用本地回环地址注册服务
-#        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
-#        group: MY_GROUP
-      config: # 注意：是config，不是discovery
-        server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
-        file-extension: yml  # 注意：是单数形式！
-#        namespace: df2ac81d-81dc-40d6-9f0e-b113b1efeae9
-#        group: MY_GROUP
 
 # 向 Spring Boot Actuator 监控器暴露所有的端点
 management:
@@ -36,6 +22,13 @@ dubbo:
   # 应用配置
   application:
     name: ${spring.application.name}
+    parameters:
+      application: ${spring.application.name}  # 显式传递应用名给Nacos
+      appname: ${spring.application.name}  # 兼容不同版本的Nacos客户端
+      dubbo.application.name: ${spring.application.name}  # Dubbo应用名称
+  # 禁用QOS服务，避免端口22222冲突
+  qos:
+    enable: false
   # 扫描包，用于扫描 Dubbo 服务实现
   scan:
     base-packages: cloud.tangyuan.helloprovider
@@ -46,4 +39,14 @@ dubbo:
   # 注册中心配置，使用 Nacos 作为注册中心
   registry:
     address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
+    parameters:
+      application: ${spring.application.name}  # 在注册中心配置中显式指定应用名称
+      appname: ${spring.application.name}
+
+# Nacos客户端配置
+nacos:
+  client:
+    application:
+      name: ${spring.application.name}  # 明确设置Nacos客户端应用名称
+
 

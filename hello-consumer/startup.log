@@ -1,0 +1,748 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< cloud.tangyuan:hello-consumer >--------------------
+[INFO] Building hello-consumer 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.0.2:run (default-cli) > test-compile @ hello-consumer >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ hello-consumer ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ hello-consumer ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ hello-consumer ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/tangyuan/Downloads/microservices/project/hello-app/hello-consumer/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ hello-consumer ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:3.0.2:run (default-cli) < test-compile @ hello-consumer <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.0.2:run (default-cli) @ hello-consumer ---
+[INFO] Attaching agents: []
+2025-12-26T18:24:26.585+08:00  INFO 41314 --- [           main] d.s.b.c.e.WelcomeLogoApplicationListener :  [DUBBO] 
+
+ :: Dubbo (v3.2.0) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:26.592+08:00  WARN 41314 --- [           main] c.a.nacos.client.logging.NacosLogging    : Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-26T18:24:26.614+08:00  WARN 41314 --- [           main] c.a.nacos.client.logging.NacosLogging    : Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-26T18:24:26.614+08:00 DEBUG 41314 --- [           main] o.s.boot.SpringApplication               : Loading source class org.springframework.cloud.bootstrap.BootstrapImportSelectorConfiguration
+2025-12-26T18:24:26.677+08:00  WARN 41314 --- [           main] c.a.nacos.client.logging.NacosLogging    : Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-26T18:24:26.678+08:00  INFO 41314 --- [           main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [req-serv] nacos-server port:8848
+2025-12-26T18:24:26.678+08:00  INFO 41314 --- [           main] c.alibaba.nacos.client.utils.ParamUtil   : [settings] [http-client] connect timeout:1000
+2025-12-26T18:24:26.679+08:00  INFO 41314 --- [           main] c.alibaba.nacos.client.utils.ParamUtil   : PER_TASK_CONFIG_SIZE: 3000.0
+2025-12-26T18:24:26.697+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-26T18:24:26.697+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-26T18:24:26.717+08:00  INFO 41314 --- [           main] c.a.n.c.a.r.identify.CredentialWatcher   : null No credential found
+2025-12-26T18:24:26.728+08:00 DEBUG 41314 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   ConfigurationPropertiesRebinderAutoConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor; SearchStrategy: all) found bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' (OnBeanCondition)
+
+   ConfigurationPropertiesRebinderAutoConfiguration#configurationPropertiesBeans matched:
+      - @ConditionalOnMissingBean (types: org.springframework.cloud.context.properties.ConfigurationPropertiesBeans; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ConfigurationPropertiesRebinderAutoConfiguration#configurationPropertiesRebinder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.cloud.context.properties.ConfigurationPropertiesRebinder; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   EncryptionBootstrapConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.crypto.encrypt.TextEncryptor' (OnClassCondition)
+
+   EncryptionBootstrapConfiguration#keyProperties matched:
+      - @ConditionalOnMissingBean (types: org.springframework.cloud.bootstrap.encrypt.KeyProperties; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NacosConfigBootstrapConfiguration matched:
+      - @ConditionalOnProperty (spring.cloud.nacos.config.enabled) matched (OnPropertyCondition)
+
+   NacosConfigBootstrapConfiguration#nacosConfigManager matched:
+      - @ConditionalOnMissingBean (types: com.alibaba.cloud.nacos.NacosConfigManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NacosConfigBootstrapConfiguration#nacosConfigProperties matched:
+      - @ConditionalOnMissingBean (types: com.alibaba.cloud.nacos.NacosConfigProperties; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   EncryptionBootstrapConfiguration.RsaEncryptionConfiguration:
+      Did not match:
+         - Keystore nor key found in Environment (EncryptionBootstrapConfiguration.KeyCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.rsa.crypto.RsaSecretEncryptor' (OnClassCondition)
+
+   EncryptionBootstrapConfiguration.VanillaEncryptionConfiguration:
+      Did not match:
+         - @ConditionalOnMissingClass found unwanted class 'org.springframework.security.rsa.crypto.RsaSecretEncryptor' (OnClassCondition)
+
+   NacosConfigBootstrapConfiguration#smartConfigurationPropertiesRebinder:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.cloud.context.properties.ConfigurationPropertiesRebinder; SearchStrategy: current) found beans of type 'org.springframework.cloud.context.properties.ConfigurationPropertiesRebinder' configurationPropertiesRebinder (OnBeanCondition)
+
+   NacosDiscoveryClientConfigServiceBootstrapConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.cloud.config.client.ConfigServicePropertySourceLocator' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-12-26T18:24:26.747+08:00  WARN 41314 --- [           main] c.a.nacos.client.logging.NacosLogging    : Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.2)
+
+2025-12-26T18:24:26.753+08:00  INFO 41314 --- [           main] c.a.n.c.c.impl.LocalConfigInfoProcessor  : LOCAL_SNAPSHOT_PATH:/Users/tangyuan/nacos/config
+2025-12-26T18:24:26.754+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of c368ad1f-dc50-46a0-9319-538250ce3923_config-0
+2025-12-26T18:24:26.760+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda/0x0000009001293498
+2025-12-26T18:24:26.760+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda/0x00000090012938c8
+2025-12-26T18:24:26.760+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2025-12-26T18:24:26.760+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2025-12-26T18:24:26.762+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8830}
+2025-12-26T18:24:26.772+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:127.0.0.1 ip,serverPort:9830,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2025-12-26T18:24:27.059+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Success to connect to server [127.0.0.1:8830] on start up, connectionId = 1766744666929_127.0.0.1_62953
+2025-12-26T18:24:27.059+08:00  INFO 41314 --- [t.remote.worker] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Notify connected event to listeners.
+2025-12-26T18:24:27.059+08:00  INFO 41314 --- [t.remote.worker] c.a.n.client.config.impl.ClientWorker    : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Connected,notify listen context...
+2025-12-26T18:24:27.059+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-12-26T18:24:27.059+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [c368ad1f-dc50-46a0-9319-538250ce3923_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000000900141fd30
+2025-12-26T18:24:27.075+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.Limiter     : limitTime:5.0
+2025-12-26T18:24:27.082+08:00  WARN 41314 --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[hello-consumer-service] & group[DEFAULT_GROUP]
+2025-12-26T18:24:27.088+08:00  WARN 41314 --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[hello-consumer-service.yml] & group[DEFAULT_GROUP]
+2025-12-26T18:24:27.089+08:00  INFO 41314 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-hello-consumer-service.yml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-hello-consumer-service,DEFAULT_GROUP'}]
+2025-12-26T18:24:27.094+08:00  WARN 41314 --- [           main] c.a.nacos.client.logging.NacosLogging    : Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-26T18:24:27.094+08:00  INFO 41314 --- [           main] c.t.h.HelloConsumerApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-12-26T18:24:27.228+08:00  INFO 41314 --- [           main] o.apache.dubbo.rpc.model.FrameworkModel  :  [DUBBO] Dubbo Framework[1] is created, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.232+08:00  INFO 41314 --- [           main] o.a.d.c.r.GlobalResourcesRepository      :  [DUBBO] Creating global shared handler ..., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.254+08:00  INFO 41314 --- [           main] o.a.dubbo.rpc.model.ApplicationModel     :  [DUBBO] Dubbo Application[1.0](unknown) is created, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.254+08:00  INFO 41314 --- [           main] org.apache.dubbo.rpc.model.ScopeModel    :  [DUBBO] Dubbo Module[1.0.0] is created, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.263+08:00  INFO 41314 --- [           main] o.a.d.c.context.AbstractConfigManager    :  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.263+08:00  INFO 41314 --- [           main] o.a.d.c.context.AbstractConfigManager    :  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.267+08:00  INFO 41314 --- [           main] o.a.d.c.utils.SerializeSecurityManager   :  [DUBBO] Serialize check serializable: true, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.267+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize allow list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo/3.2.0/dubbo-3.2.0.jar!/security/serialize.allowlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.274+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize allow list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo-common/3.2.0/dubbo-common-3.2.0.jar!/security/serialize.allowlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.274+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize blocked list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo/3.2.0/dubbo-3.2.0.jar!/security/serialize.blockedlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.285+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize blocked list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo-common/3.2.0/dubbo-common-3.2.0.jar!/security/serialize.blockedlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.307+08:00  INFO 41314 --- [           main] o.a.dubbo.rpc.model.ApplicationModel     :  [DUBBO] Dubbo Application[1.1](unknown) is created, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.307+08:00  INFO 41314 --- [           main] org.apache.dubbo.rpc.model.ScopeModel    :  [DUBBO] Dubbo Module[1.1.0] is created, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.309+08:00  INFO 41314 --- [           main] o.a.d.c.context.AbstractConfigManager    :  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.309+08:00  INFO 41314 --- [           main] o.a.d.c.context.AbstractConfigManager    :  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.309+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize allow list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo/3.2.0/dubbo-3.2.0.jar!/security/serialize.allowlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.309+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize allow list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo-common/3.2.0/dubbo-common-3.2.0.jar!/security/serialize.allowlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.310+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize blocked list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo/3.2.0/dubbo-3.2.0.jar!/security/serialize.blockedlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.310+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize blocked list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo-common/3.2.0/dubbo-common-3.2.0.jar!/security/serialize.blockedlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.312+08:00  INFO 41314 --- [           main] o.a.d.c.s.c.DubboSpringInitializer       :  [DUBBO] Use default application: Dubbo Application[1.1](unknown), dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.312+08:00  INFO 41314 --- [           main] org.apache.dubbo.rpc.model.ScopeModel    :  [DUBBO] Dubbo Module[1.1.1] is created, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.313+08:00  INFO 41314 --- [           main] o.a.d.c.context.AbstractConfigManager    :  [DUBBO] Config settings: {dubbo.config.mode=STRICT, dubbo.config.ignore-duplicated-interface=false}, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.313+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize allow list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo/3.2.0/dubbo-3.2.0.jar!/security/serialize.allowlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.313+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize allow list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo-common/3.2.0/dubbo-common-3.2.0.jar!/security/serialize.allowlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.313+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize blocked list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo/3.2.0/dubbo-3.2.0.jar!/security/serialize.blockedlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.313+08:00  INFO 41314 --- [           main] o.a.d.c.u.SerializeSecurityConfigurator  :  [DUBBO] Read serialize blocked list from jar:file:/Users/tangyuan/.m2/repository/org/apache/dubbo/dubbo-common/3.2.0/dubbo-common-3.2.0.jar!/security/serialize.blockedlist, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.314+08:00  INFO 41314 --- [           main] o.a.d.c.s.c.DubboSpringInitializer       :  [DUBBO] Use default module model of target application: Dubbo Module[1.1.1], dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.314+08:00  INFO 41314 --- [           main] o.a.d.c.s.c.DubboSpringInitializer       :  [DUBBO] Bind Dubbo Module[1.1.1] to spring container: org.springframework.beans.factory.support.DefaultListableBeanFactory@63cd2cd2, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.411+08:00  INFO 41314 --- [           main] c.s.b.f.a.ServiceAnnotationPostProcessor :  [DUBBO] BeanNameGenerator bean can't be found in BeanFactory with name [org.springframework.context.annotation.internalConfigurationBeanNameGenerator], dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.411+08:00  INFO 41314 --- [           main] c.s.b.f.a.ServiceAnnotationPostProcessor :  [DUBBO] BeanNameGenerator will be a instance of org.springframework.context.annotation.AnnotationBeanNameGenerator , it maybe a potential problem on bean name generation., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.412+08:00  WARN 41314 --- [           main] c.s.b.f.a.ServiceAnnotationPostProcessor :  [DUBBO] No class annotated by Dubbo @Service was found under package [cloud.tangyuan.helloconsumer], ignore re-scanned classes: 0, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 5-28. This may be caused by No annotations were found on the class, go to https://dubbo.apache.org/faq/5/28 to find instructions. 
+2025-12-26T18:24:27.440+08:00  INFO 41314 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1dab14d6-9b80-3a62-9248-14193caf8b04
+2025-12-26T18:24:27.449+08:00  INFO 41314 --- [           main] f.a.ReferenceAnnotationBeanPostProcessor :  [DUBBO] Register dubbo reference bean: helloService = ReferenceBean:cloud.tangyuan.hellocommon.HelloService() at private final cloud.tangyuan.hellocommon.HelloService cloud.tangyuan.helloconsumer.HelloConsumerController.helloService, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.528+08:00  INFO 41314 --- [           main] f.a.ReferenceAnnotationBeanPostProcessor :  [DUBBO] class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.547+08:00  INFO 41314 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'cloud.tangyuan.helloconsumer.HelloFeignService' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-26T18:24:27.660+08:00  INFO 41314 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2025-12-26T18:24:27.663+08:00  INFO 41314 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-26T18:24:27.663+08:00  INFO 41314 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-12-26T18:24:27.690+08:00  INFO 41314 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-26T18:24:27.690+08:00  INFO 41314 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 590 ms
+2025-12-26T18:24:27.732+08:00  INFO 41314 --- [           main] o.a.d.c.s.c.DubboConfigBeanInitializer   :  [DUBBO] loading dubbo config beans ..., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.734+08:00  INFO 41314 --- [           main] o.a.d.c.s.c.DubboConfigBeanInitializer   :  [DUBBO] dubbo config beans are loaded., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.752+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] No value is configured in the registry, the DynamicConfigurationFactory extension[name : nacos] supports as the config center, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.752+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] The registry[<dubbo:registry username="nacos" address="nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830" protocol="nacos" password="******" port="8810" />] will be used as the config center, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.754+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] use registry as config-center: <dubbo:config-center highestPriority="false" id="config-center-nacos-127.0.0.1-8810" username="nacos" address="nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830" protocol="nacos" password="******" port="8810" parameters="{client=null}" />, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.758+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-26T18:24:27.758+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-26T18:24:27.854+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0
+2025-12-26T18:24:27.854+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda/0x0000009001293498
+2025-12-26T18:24:27.854+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda/0x00000090012938c8
+2025-12-26T18:24:27.854+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2025-12-26T18:24:27.854+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2025-12-26T18:24:27.855+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8810}
+2025-12-26T18:24:27.855+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:127.0.0.1 ip,serverPort:9810,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2025-12-26T18:24:27.963+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Success to connect to server [127.0.0.1:8810] on start up, connectionId = 1766744667857_127.0.0.1_62959
+2025-12-26T18:24:27.964+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-12-26T18:24:27.964+08:00  INFO 41314 --- [t.remote.worker] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Notify connected event to listeners.
+2025-12-26T18:24:27.964+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000000900141fd30
+2025-12-26T18:24:27.964+08:00  INFO 41314 --- [t.remote.worker] c.a.n.client.config.impl.ClientWorker    : [f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0] Connected,notify listen context...
+2025-12-26T18:24:27.970+08:00  WARN 41314 --- [           main] o.a.d.common.config.ConfigurationUtils   :  [DUBBO] Config center was specified, but no config item found., dubbo version: 3.2.0, current host: 192.168.31.81, error code: 0-12. This may be caused by , go to https://dubbo.apache.org/faq/0/12 to find instructions. 
+2025-12-26T18:24:27.970+08:00  WARN 41314 --- [           main] o.a.d.common.config.ConfigurationUtils   :  [DUBBO] Config center was specified, but no config item found., dubbo version: 3.2.0, current host: 192.168.31.81, error code: 0-12. This may be caused by , go to https://dubbo.apache.org/faq/0/12 to find instructions. 
+2025-12-26T18:24:27.977+08:00  INFO 41314 --- [           main] o.a.dubbo.config.context.ConfigManager   :  [DUBBO] The current configurations or effective configurations are as follows:, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.977+08:00  INFO 41314 --- [           main] o.a.dubbo.config.context.ConfigManager   :  [DUBBO] <dubbo:application enableFileCache="true" executorManagementMode="isolation" parameters="{}" name="hello-consumer-service" qosEnable="true" protocol="dubbo" />, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.977+08:00  INFO 41314 --- [           main] o.a.dubbo.config.context.ConfigManager   :  [DUBBO] <dubbo:protocol preferSerialization="fastjson2,hessian2" port="-1" name="dubbo" />, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.977+08:00  INFO 41314 --- [           main] o.a.dubbo.config.context.ConfigManager   :  [DUBBO] <dubbo:registry username="nacos" address="nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830" protocol="nacos" password="******" port="8810" />, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.977+08:00  INFO 41314 --- [           main] o.a.dubbo.config.context.ConfigManager   :  [DUBBO] <dubbo:ssl />, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.984+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.0] has been initialized!, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.988+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.1] has been initialized!, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.990+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] No value is configured in the registry, the MetadataReportFactory extension[name : nacos] supports as the metadata center, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.990+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] The registry[<dubbo:registry username="nacos" address="nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830" protocol="nacos" password="******" port="8810" />] will be used as the metadata center, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:27.991+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] use registry as metadata-center: <dubbo:metadata-report username="nacos" address="nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830" protocol="nacos" password="******" port="8810" parameters="{client=null}" />, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.022+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-26T18:24:28.022+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-26T18:24:28.103+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of e066188b-8d5c-4548-a074-cee7a65710a5_config-0
+2025-12-26T18:24:28.103+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda/0x0000009001293498
+2025-12-26T18:24:28.103+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Register server push request handler:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$$Lambda/0x00000090012938c8
+2025-12-26T18:24:28.103+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Registry connection listener to current client:com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$1
+2025-12-26T18:24:28.103+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient$2
+2025-12-26T18:24:28.103+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8830}
+2025-12-26T18:24:28.103+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:127.0.0.1 ip,serverPort:9830,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2025-12-26T18:24:28.210+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Success to connect to server [127.0.0.1:8830] on start up, connectionId = 1766744668105_127.0.0.1_62961
+2025-12-26T18:24:28.210+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-12-26T18:24:28.210+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000000900141fd30
+2025-12-26T18:24:28.210+08:00  INFO 41314 --- [t.remote.worker] com.alibaba.nacos.common.remote.client   : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Notify connected event to listeners.
+2025-12-26T18:24:28.210+08:00  INFO 41314 --- [t.remote.worker] c.a.n.client.config.impl.ClientWorker    : [e066188b-8d5c-4548-a074-cee7a65710a5_config-0] Connected,notify listen context...
+2025-12-26T18:24:28.214+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] Dubbo Application[1.1](hello-consumer-service) has been initialized!, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.285+08:00  WARN 41314 --- [           main] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: cloud.tangyuan.helloconsumer.HelloConsumerController
+2025-12-26T18:24:28.292+08:00  INFO 41314 --- [           main] o.a.d.c.s.reference.ReferenceCreator     :  [DUBBO] The configBean[type:ReferenceConfig<cloud.tangyuan.hellocommon.HelloService>] has been built., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.376+08:00  INFO 41314 --- [           main] c.a.c.sentinel.SentinelWebMvcConfigurer  : [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2025-12-26T18:24:28.477+08:00  WARN 41314 --- [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-26T18:24:28.482+08:00  INFO 41314 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoint(s) beneath base path '/actuator'
+2025-12-26T18:24:28.507+08:00  INFO 41314 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2025-12-26T18:24:28.513+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.1] is starting., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.513+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] Dubbo Application[1.1](hello-consumer-service) is starting., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.513+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.0] is starting., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.513+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.0] has started., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.561+08:00  INFO 41314 --- [           main] org.apache.dubbo.qos.server.Server       :  [DUBBO] qos-server bind localhost:22222, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.570+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+2025-12-26T18:24:28.570+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2025-12-26T18:24:28.570+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+2025-12-26T18:24:28.576+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-26T18:24:28.576+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-26T18:24:28.664+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 8f5a2950-46c3-4b60-ad4a-2933aef49b0b
+2025-12-26T18:24:28.665+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-12-26T18:24:28.665+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-12-26T18:24:28.665+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-12-26T18:24:28.665+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8830}
+2025-12-26T18:24:28.665+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:127.0.0.1 ip,serverPort:9830,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2025-12-26T18:24:28.771+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Success to connect to server [127.0.0.1:8830] on start up, connectionId = 1766744668667_127.0.0.1_62963
+2025-12-26T18:24:28.771+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-12-26T18:24:28.771+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000000900141fd30
+2025-12-26T18:24:28.771+08:00  INFO 41314 --- [t.remote.worker] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Notify connected event to listeners.
+2025-12-26T18:24:28.771+08:00  INFO 41314 --- [t.remote.worker] com.alibaba.nacos.client.naming          : Grpc connection connect
+2025-12-26T18:24:28.777+08:00  INFO 41314 --- [           main] o.a.d.r.nacos.NacosNamingServiceWrapper  :  [DUBBO] Nacos batch register enable: true, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.778+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Loaded registry cache file /Users/tangyuan/.dubbo/dubbo-registry-hello-consumer-service-127.0.0.1-8810.cache, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.787+08:00  INFO 41314 --- [           main] o.a.d.r.c.m.MigrationRuleListener        :  [DUBBO] Listening for migration rules on dataId hello-consumer-service.migration, group DUBBO_SERVICEDISCOVERY_MIGRATION, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.788+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.CacheData   : nacos.cache.data.init.snapshot = true 
+2025-12-26T18:24:28.788+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [subscribe] hello-consumer-service.migration+DUBBO_SERVICEDISCOVERY_MIGRATION
+2025-12-26T18:24:28.791+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [add-listener] ok, tenant=, dataId=hello-consumer-service.migration, group=DUBBO_SERVICEDISCOVERY_MIGRATION, cnt=1
+2025-12-26T18:24:28.810+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [subscribe] hello-consumer-service.configurators+dubbo
+2025-12-26T18:24:28.810+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [add-listener] ok, tenant=, dataId=hello-consumer-service.configurators, group=dubbo, cnt=1
+2025-12-26T18:24:28.812+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Please set 'dubbo.registry.parameters.register-consumer-url=true' to turn on consumer url registration., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:28.818+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [subscribe] cloud.tangyuan.hellocommon.HelloService::.condition-router+dubbo
+2025-12-26T18:24:28.818+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [add-listener] ok, tenant=, dataId=cloud.tangyuan.hellocommon.HelloService::.condition-router, group=dubbo, cnt=1
+2025-12-26T18:24:28.819+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [subscribe] hello-consumer-service.condition-router+dubbo
+2025-12-26T18:24:28.820+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [add-listener] ok, tenant=, dataId=hello-consumer-service.condition-router, group=dubbo, cnt=1
+2025-12-26T18:24:29.025+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Subscribe: consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.027+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService::, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.030+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@providers:cloud.tangyuan.hellocommon.HelloService:: -> []
+2025-12-26T18:24:29.031+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@providers:cloud.tangyuan.hellocommon.HelloService:: -> []
+2025-12-26T18:24:29.032+08:00  WARN 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Received empty url address list and empty protection is disabled, will clear current available addresses, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 1-37. This may be caused by , go to https://dubbo.apache.org/faq/1/37 to find instructions. 
+2025-12-26T18:24:29.032+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Notify urls for subscribe url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false, url size: 1, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.034+08:00  INFO 41314 --- [           main] o.a.d.r.integration.RegistryDirectory    :  [DUBBO] Received invokers changed event from registry. Registry type: interface. Service Key: cloud.tangyuan.hellocommon.HelloService. Urls Size : 1. Invokers Size : 0. Available Size: 0. Available Invokers : empty, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.035+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.036+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@providers:cloud.tangyuan.hellocommon.HelloService -> []
+2025-12-26T18:24:29.036+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@providers:cloud.tangyuan.hellocommon.HelloService -> []
+2025-12-26T18:24:29.036+08:00  WARN 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Received empty url address list and empty protection is disabled, will clear current available addresses, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 1-37. This may be caused by , go to https://dubbo.apache.org/faq/1/37 to find instructions. 
+2025-12-26T18:24:29.036+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Notify urls for subscribe url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false, url size: 1, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.037+08:00  INFO 41314 --- [           main] o.a.d.r.integration.RegistryDirectory    :  [DUBBO] Received invokers changed event from registry. Registry type: interface. Service Key: cloud.tangyuan.hellocommon.HelloService. Urls Size : 1. Invokers Size : 0. Available Size: 0. Available Invokers : empty, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.038+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService::, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.038+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.038+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [subscribe] cloud.tangyuan.hellocommon.HelloService::.configurators+dubbo
+2025-12-26T18:24:29.038+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [add-listener] ok, tenant=, dataId=cloud.tangyuan.hellocommon.HelloService::.configurators, group=dubbo, cnt=1
+2025-12-26T18:24:29.054+08:00  INFO 41314 --- [           main] o.a.d.r.client.ServiceDiscoveryRegistry  :  [DUBBO] Loaded registry cache file /Users/tangyuan/.dubbo/dubbo-registry-hello-consumer-service-127.0.0.1-8810.cache, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.058+08:00  INFO 41314 --- [           main] o.a.d.r.c.m.store.MetaCacheManager       :  [DUBBO] Successfully loaded meta cache from file .metadata.hello-consumer-service.nacos.127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830, entries 2, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.111+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from ans.namespace attribute : null
+2025-12-26T18:24:29.111+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2025-12-26T18:24:29.111+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from namespace attribute :null
+2025-12-26T18:24:29.112+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-26T18:24:29.112+08:00  INFO 41314 --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-26T18:24:29.199+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 28111a02-53aa-41f6-b12b-3b7773cdd216
+2025-12-26T18:24:29.199+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-12-26T18:24:29.199+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-12-26T18:24:29.199+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-12-26T18:24:29.200+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8810}
+2025-12-26T18:24:29.200+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : grpc client connection server:127.0.0.1 ip,serverPort:9810,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2025-12-26T18:24:29.304+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Success to connect to server [127.0.0.1:8810] on start up, connectionId = 1766744669202_127.0.0.1_62988
+2025-12-26T18:24:29.304+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-12-26T18:24:29.304+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda/0x000000900141fd30
+2025-12-26T18:24:29.304+08:00  INFO 41314 --- [t.remote.worker] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Notify connected event to listeners.
+2025-12-26T18:24:29.304+08:00  INFO 41314 --- [t.remote.worker] com.alibaba.nacos.client.naming          : Grpc connection connect
+2025-12-26T18:24:29.306+08:00  INFO 41314 --- [           main] o.a.d.r.nacos.NacosNamingServiceWrapper  :  [DUBBO] Nacos batch register enable: true, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.310+08:00  INFO 41314 --- [           main] o.a.dubbo.metadata.MappingCacheManager   :  [DUBBO] Successfully loaded mapping cache from file .mapping.hello-consumer-service, entries 1, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.319+08:00  INFO 41314 --- [           main] o.a.d.r.client.ServiceDiscoveryRegistry  :  [DUBBO] Trying to subscribe from apps hello-provider-service for service key cloud.tangyuan.hellocommon.HelloService, , dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.322+08:00  INFO 41314 --- [eduler-thread-1] c.a.nacos.client.config.utils.JvmUtil    : isMultiInstance:false
+2025-12-26T18:24:29.323+08:00  INFO 41314 --- [eduler-thread-1] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [subscribe] cloud.tangyuan.hellocommon.HelloService+mapping
+2025-12-26T18:24:29.323+08:00  INFO 41314 --- [eduler-thread-1] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [add-listener] ok, tenant=, dataId=cloud.tangyuan.hellocommon.HelloService, group=mapping, cnt=1
+2025-12-26T18:24:29.323+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:hello-provider-service, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.326+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@hello-provider-service -> []
+2025-12-26T18:24:29.327+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@hello-provider-service -> []
+2025-12-26T18:24:29.328+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:hello-provider-service, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.329+08:00  INFO 41314 --- [eduler-thread-1] DiscoveryRegistry$DefaultMappingListener :  [DUBBO] Received mapping notification from meta server, {serviceKey: cloud.tangyuan.hellocommon.HelloService, apps: [hello-provider-service]}, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.330+08:00  INFO 41314 --- [           main] .r.c.m.DefaultMigrationAddressComparator :  [DUBBO] No instance address available, stop compare., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.330+08:00  INFO 41314 --- [           main] o.a.d.r.c.m.MigrationRuleHandler         :  [DUBBO] Succeed Migrated to APPLICATION_FIRST mode. Service Name: cloud.tangyuan.hellocommon.HelloService, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.330+08:00  INFO 41314 --- [           main] o.apache.dubbo.config.ReferenceConfig    :  [DUBBO] Referred dubbo service: [cloud.tangyuan.hellocommon.HelloService]. it's not GenericService reference, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.331+08:00  INFO 41314 --- [Report-thread-1] o.a.d.m.store.nacos.NacosMetadataReport  :  [DUBBO] store consumer metadata. Identifier : org.apache.dubbo.metadata.report.identifier.MetadataIdentifier@142a5aeb; definition: org.apache.dubbo.common.url.component.URLParam$URLParamMap@382605f7, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.334+08:00 ERROR 41314 --- [           main] o.apache.dubbo.config.ReferenceConfig    :  [DUBBO] No provider available., dubbo version: 3.2.0, current host: 192.168.31.81, error code: 2-2. This may be caused by provider not started, go to https://dubbo.apache.org/faq/2/2 to find instructions. 
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.get(SimpleReferenceCache.java:132) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:409) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:29.336+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Unsubscribe: consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.346+08:00 ERROR 41314 --- [           main] o.apache.dubbo.config.ReferenceConfig    :  [DUBBO] No provider available., dubbo version: 3.2.0, current host: 192.168.31.81, error code: 2-2. This may be caused by server crashed, go to https://dubbo.apache.org/faq/2/2 to find instructions. 
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.get(SimpleReferenceCache.java:132) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:409) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:29.346+08:00 ERROR 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Model reference failed: Dubbo Module[1.1.1] , catch error : Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 5-15. This may be caused by , go to https://dubbo.apache.org/faq/5/15 to find instructions. 
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744668517&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.get(SimpleReferenceCache.java:132) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:409) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:29.348+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Please set 'dubbo.registry.parameters.register-consumer-url=true' to turn on consumer url registration., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.348+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Subscribe: consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.348+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService::, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.350+08:00  WARN 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Received empty url address list and empty protection is disabled, will clear current available addresses, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 1-37. This may be caused by , go to https://dubbo.apache.org/faq/1/37 to find instructions. 
+2025-12-26T18:24:29.350+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Notify urls for subscribe url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false, url size: 1, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.350+08:00  INFO 41314 --- [           main] o.a.d.r.integration.RegistryDirectory    :  [DUBBO] Received invokers changed event from registry. Registry type: interface. Service Key: cloud.tangyuan.hellocommon.HelloService. Urls Size : 1. Invokers Size : 0. Available Size: 0. Available Invokers : empty, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.350+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.352+08:00  WARN 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Received empty url address list and empty protection is disabled, will clear current available addresses, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 1-37. This may be caused by , go to https://dubbo.apache.org/faq/1/37 to find instructions. 
+2025-12-26T18:24:29.352+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Notify urls for subscribe url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false, url size: 1, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.352+08:00  INFO 41314 --- [           main] o.a.d.r.integration.RegistryDirectory    :  [DUBBO] Received invokers changed event from registry. Registry type: interface. Service Key: cloud.tangyuan.hellocommon.HelloService. Urls Size : 1. Invokers Size : 0. Available Size: 0. Available Invokers : empty, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.352+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService::, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.352+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:cloud.tangyuan.hellocommon.HelloService, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.643+08:00  INFO 41314 --- [or-127.0.0.1-22] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Receive server push request, request = NotifySubscriberRequest, requestId = 24
+2025-12-26T18:24:29.643+08:00  INFO 41314 --- [or-127.0.0.1-22] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Ack server push request, request = NotifySubscriberRequest, requestId = 24
+2025-12-26T18:24:29.645+08:00  INFO 41314 --- [           main] o.a.d.r.client.ServiceDiscoveryRegistry  :  [DUBBO] Trying to subscribe from apps hello-provider-service for service key cloud.tangyuan.hellocommon.HelloService, , dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.646+08:00  INFO 41314 --- [or-127.0.0.1-23] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Receive server push request, request = NotifySubscriberRequest, requestId = 25
+2025-12-26T18:24:29.647+08:00  INFO 41314 --- [or-127.0.0.1-23] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Ack server push request, request = NotifySubscriberRequest, requestId = 25
+2025-12-26T18:24:29.646+08:00  INFO 41314 --- [           main] .r.c.m.DefaultMigrationAddressComparator :  [DUBBO] No instance address available, stop compare., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.647+08:00  INFO 41314 --- [           main] o.a.d.r.c.m.MigrationRuleHandler         :  [DUBBO] Succeed Migrated to APPLICATION_FIRST mode. Service Name: cloud.tangyuan.hellocommon.HelloService, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.647+08:00  INFO 41314 --- [           main] o.apache.dubbo.config.ReferenceConfig    :  [DUBBO] Referred dubbo service: [cloud.tangyuan.hellocommon.HelloService]. it's not GenericService reference, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.647+08:00  INFO 41314 --- [Report-thread-1] o.a.d.m.store.nacos.NacosMetadataReport  :  [DUBBO] store consumer metadata. Identifier : org.apache.dubbo.metadata.report.identifier.MetadataIdentifier@29933952; definition: org.apache.dubbo.common.url.component.URLParam$URLParamMap@382605f7, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.648+08:00 ERROR 41314 --- [           main] o.apache.dubbo.config.ReferenceConfig    :  [DUBBO] No provider available., dubbo version: 3.2.0, current host: 192.168.31.81, error code: 2-2. This may be caused by provider not started, go to https://dubbo.apache.org/faq/2/2 to find instructions. 
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroyReference(SimpleReferenceCache.java:265) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:218) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:242) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:414) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:29.648+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Unsubscribe: consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&category=providers,configurators,routers&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.651+08:00  INFO 41314 --- [eduler-thread-2] DiscoveryRegistry$DefaultMappingListener :  [DUBBO] Received mapping notification from meta server, {serviceKey: cloud.tangyuan.hellocommon.HelloService, apps: [hello-provider-service]}, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.656+08:00 ERROR 41314 --- [           main] o.apache.dubbo.config.ReferenceConfig    :  [DUBBO] No provider available., dubbo version: 3.2.0, current host: 192.168.31.81, error code: 2-2. This may be caused by server crashed, go to https://dubbo.apache.org/faq/2/2 to find instructions. 
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroyReference(SimpleReferenceCache.java:265) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:218) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:242) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:414) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:29.657+08:00 ERROR 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Model start failed: Dubbo Module[1.1.1] start failed: java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 5-14. This may be caused by , go to https://dubbo.apache.org/faq/5/14 to find instructions. 
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroyReference(SimpleReferenceCache.java:265) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:218) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:242) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:414) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:29.657+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultMetricsServiceExporter  :  [DUBBO] The MetricsConfig not exist, will not export metrics service., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.659+08:00  INFO 41314 --- [           main] o.a.d.c.b.b.InternalServiceConfigBuilder :  [DUBBO] org.apache.dubbo.metadata.MetadataServiceService Port hasn't been set will use default protocol defined in protocols., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.660+08:00  INFO 41314 --- [           main] o.a.d.c.b.b.InternalServiceConfigBuilder :  [DUBBO] Using dubbo protocol to export org.apache.dubbo.metadata.MetadataService service on port -1, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.679+08:00  WARN 41314 --- [           main] org.apache.dubbo.config.ServiceConfig    :  [DUBBO] Use random available port(20880) for protocol dubbo, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 5-8. This may be caused by , go to https://dubbo.apache.org/faq/5/8 to find instructions. 
+2025-12-26T18:24:29.701+08:00  INFO 41314 --- [           main] org.apache.dubbo.config.ServiceConfig    :  [DUBBO] Export dubbo service org.apache.dubbo.metadata.MetadataService to local registry url : injvm://127.0.0.1/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&exporter.listener=injvm&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.702+08:00  INFO 41314 --- [           main] org.apache.dubbo.config.ServiceConfig    :  [DUBBO] Export dubbo service org.apache.dubbo.metadata.MetadataService to url dubbo://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.706+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [subscribe] org.apache.dubbo.metadata.MetadataService:1.0.0:hello-consumer-service.configurators+dubbo
+2025-12-26T18:24:29.706+08:00  INFO 41314 --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-127.0.0.1_8810-127.0.0.1_8820-127.0.0.1_8830] [add-listener] ok, tenant=, dataId=org.apache.dubbo.metadata.MetadataService:1.0.0:hello-consumer-service.configurators, group=dubbo, cnt=1
+2025-12-26T18:24:29.733+08:00  INFO 41314 --- [           main] o.a.d.remoting.transport.AbstractServer  :  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.31.81:20880, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.735+08:00  INFO 41314 --- [           main] o.a.d.r.c.m.MigrationRuleListener        :  [DUBBO] Listening for migration rules on dataId hello-consumer-service.migration, group DUBBO_SERVICEDISCOVERY_MIGRATION, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.737+08:00  INFO 41314 --- [           main] org.apache.dubbo.config.ServiceConfig    :  [DUBBO] Export dubbo service org.apache.dubbo.metadata.MetadataService to url dubbo://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.878+08:00  INFO 41314 --- [or-127.0.0.1-19] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Receive server push request, request = NotifySubscriberRequest, requestId = 37
+2025-12-26T18:24:29.878+08:00  INFO 41314 --- [or-127.0.0.1-19] com.alibaba.nacos.common.remote.client   : [28111a02-53aa-41f6-b12b-3b7773cdd216] Ack server push request, request = NotifySubscriberRequest, requestId = 37
+2025-12-26T18:24:29.916+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Subscribe: provider://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&category=configurators&check=false&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.916+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:org.apache.dubbo.metadata.MetadataService:1.0.0:hello-consumer-service, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.918+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@providers:org.apache.dubbo.metadata.MetadataService:1.0.0:hello-consumer-service -> []
+2025-12-26T18:24:29.919+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@providers:org.apache.dubbo.metadata.MetadataService:1.0.0:hello-consumer-service -> []
+2025-12-26T18:24:29.919+08:00  WARN 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Received empty url address list and empty protection is disabled, will clear current available addresses, dubbo version: 3.2.0, current host: 192.168.31.81, error code: 1-37. This may be caused by , go to https://dubbo.apache.org/faq/1/37 to find instructions. 
+2025-12-26T18:24:29.919+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Notify urls for subscribe url provider://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&category=configurators&check=false&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, url size: 1, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.919+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:providers:org.apache.dubbo.metadata.MetadataService:1.0.0:hello-consumer-service, group:DEFAULT_GROUP, clusters: 
+2025-12-26T18:24:29.919+08:00  INFO 41314 --- [           main] org.apache.dubbo.config.ServiceConfig    :  [DUBBO] Try to register interface application mapping for service hello-consumer-service/org.apache.dubbo.metadata.MetadataService:1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.919+08:00  INFO 41314 --- [           main] org.apache.dubbo.config.ServiceConfig    :  [DUBBO] Successfully registered interface application mapping for service hello-consumer-service/org.apache.dubbo.metadata.MetadataService:1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.919+08:00  INFO 41314 --- [           main] .c.m.ConfigurableMetadataServiceExporter :  [DUBBO] The MetadataService exports urls : [dubbo://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0], dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.920+08:00  INFO 41314 --- [           main] o.a.d.r.c.m.ServiceInstanceMetadataUtils :  [DUBBO] Start registering instance address to registry., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:29.922+08:00 ERROR 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] Dubbo Application[1.1](hello-consumer-service) found failed module: Dubbo Module[1.1.1], dubbo version: 3.2.0, current host: 192.168.31.81, error code: 5-14. This may be caused by , go to https://dubbo.apache.org/faq/5/14 to find instructions. 
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroyReference(SimpleReferenceCache.java:265) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:218) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:242) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:414) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:30.451+08:00  INFO 41314 --- [or-127.0.0.1-31] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Receive server push request, request = NotifySubscriberRequest, requestId = 26
+2025-12-26T18:24:30.451+08:00  INFO 41314 --- [or-127.0.0.1-31] com.alibaba.nacos.common.remote.client   : [8f5a2950-46c3-4b60-ad4a-2933aef49b0b] Ack server push request, request = NotifySubscriberRequest, requestId = 26
+2025-12-26T18:24:30.927+08:00  WARN 41314 --- [           main] org.apache.tomcat.util.net.NioEndpoint   : Failed to unlock acceptor for [http-nio-8083] because the local address was not available
+2025-12-26T18:24:30.928+08:00  INFO 41314 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-12-26T18:24:30.927+08:00 ERROR 41314 --- [o-8083-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:203) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:383) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:407) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:520) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:128) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-12-26T18:24:30.940+08:00  INFO 41314 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-26T18:24:30.941+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.1] is stopping., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:30.942+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.1] has stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:30.942+08:00  INFO 41314 --- [           main] o.apache.dubbo.rpc.model.FrameworkModel  :  [DUBBO] Reset global default application from Dubbo Application[1.1](hello-consumer-service) to null, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:30.942+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] Dubbo Application[1.1](hello-consumer-service) is stopping., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:30.943+08:00  INFO 41314 --- [           main] o.a.d.rpc.protocol.dubbo.DubboProtocol   :  [DUBBO] Destroying protocol [DubboProtocol] ..., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:30.943+08:00  INFO 41314 --- [           main] o.a.d.rpc.protocol.dubbo.DubboProtocol   :  [DUBBO] Closing dubbo server: /192.168.31.81:20880, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:30.943+08:00  INFO 41314 --- [           main] o.a.d.remoting.transport.AbstractServer  :  [DUBBO] Close NettyServer bind /0.0.0.0:20880, export /192.168.31.81:20880, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.023+08:00  INFO 41314 --- [           main] o.a.d.rpc.protocol.dubbo.DubboProtocol   :  [DUBBO] Unexport service: dubbo://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.023+08:00  INFO 41314 --- [           main] org.apache.dubbo.qos.server.Server       :  [DUBBO] qos-server stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.024+08:00  INFO 41314 --- [           main] o.a.d.rpc.protocol.injvm.InjvmProtocol   :  [DUBBO] Unexport service: injvm://127.0.0.1/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&exporter.listener=injvm&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.024+08:00  INFO 41314 --- [           main] org.apache.dubbo.qos.server.Server       :  [DUBBO] qos-server stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.025+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Unregister: dubbo://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.026+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Unsubscribe: provider://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&bind.ip=192.168.31.81&bind.port=20880&category=configurators&check=false&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&qos.enable=true&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.029+08:00  INFO 41314 --- [           main] org.apache.dubbo.qos.server.Server       :  [DUBBO] qos-server stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.030+08:00  INFO 41314 --- [           main] org.apache.dubbo.qos.server.Server       :  [DUBBO] qos-server stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.030+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.0] is stopping., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.031+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Unregister: dubbo://192.168.31.81:20880/org.apache.dubbo.metadata.MetadataService?anyhost=true&application=hello-consumer-service&background=false&delay=0&deprecated=false&dubbo=2.0.2&dynamic=true&executor-management-mode=isolation&file-cache=true&generic=false&getAndListenInstanceMetadata.1.callback=true&getAndListenInstanceMetadata.return=true&getAndListenInstanceMetadata.sent=true&group=hello-consumer-service&interface=org.apache.dubbo.metadata.MetadataService&methods=exportInstanceMetadata,getAndListenInstanceMetadata,getExportedServiceURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getExportedURLs,getInstanceMetadataChangedListenerMap,getMetadataInfo,getMetadataInfos,getMetadataURL,getServiceDefinition,getServiceDefinition,getSubscribedURLs,isMetadataService,serviceName,toSortedStrings,toSortedStrings,version&pid=41314&prefer.serialization=fastjson2,hessian2&register=false&release=3.2.0&revision=3.2.0&service-name-mapping=true&side=provider&timestamp=1766744669675&version=1.0.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.031+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.1.0] has stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.031+08:00  INFO 41314 --- [           main] o.a.d.registry.support.RegistryManager   :  [DUBBO] Close all registries [nacos://127.0.0.1:8810/org.apache.dubbo.registry.RegistryService?application=hello-consumer-service&backup=127.0.0.1:8820,127.0.0.1:8830&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=org.apache.dubbo.registry.RegistryService&pid=41314&qos.enable=true&release=3.2.0, nacos://127.0.0.1:8810/org.apache.dubbo.registry.RegistryService?application=hello-consumer-service&backup=127.0.0.1:8820,127.0.0.1:8830&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=org.apache.dubbo.registry.RegistryService&pid=41314&qos.enable=true&release=3.2.0], dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.033+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2025-12-26T18:24:33.033+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2025-12-26T18:24:33.346+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2025-12-26T18:24:33.347+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+2025-12-26T18:24:33.347+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2025-12-26T18:24:33.347+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+2025-12-26T18:24:33.347+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@30bd6bc8[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-12-26T18:24:33.347+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Close current connection 1766744669202_127.0.0.1_62988
+2025-12-26T18:24:33.349+08:00  INFO 41314 --- [or-127.0.0.1-20] c.a.n.c.remote.client.grpc.GrpcClient    : [1766744669202_127.0.0.1_62988]Ignore complete event,isRunning:false,isAbandon=false
+2025-12-26T18:24:33.351+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@55d776ac[Running, pool size = 21, active threads = 0, queued tasks = 0, completed tasks = 21]
+2025-12-26T18:24:33.352+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@29dcad7e[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 1]
+2025-12-26T18:24:33.352+08:00  INFO 41314 --- [           main] c.a.n.c.a.r.identify.CredentialWatcher   : [null] CredentialWatcher is stopped
+2025-12-26T18:24:33.352+08:00  INFO 41314 --- [           main] c.a.n.c.a.r.identify.CredentialService   : [null] CredentialService is freed
+2025-12-26T18:24:33.352+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2025-12-26T18:24:33.352+08:00  INFO 41314 --- [           main] .r.c.e.l.ServiceInstancesChangedListener :  [DUBBO] Destroying instance listener of  [hello-provider-service], dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.353+08:00  INFO 41314 --- [           main] o.a.dubbo.registry.nacos.NacosRegistry   :  [DUBBO] Destroy registry:nacos://127.0.0.1:8810/org.apache.dubbo.registry.RegistryService?application=hello-consumer-service&backup=127.0.0.1:8820,127.0.0.1:8830&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=org.apache.dubbo.registry.RegistryService&pid=41314&qos.enable=true&release=3.2.0, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.353+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2025-12-26T18:24:33.353+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2025-12-26T18:24:33.658+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2025-12-26T18:24:33.659+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+2025-12-26T18:24:33.659+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2025-12-26T18:24:33.659+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Start destroying NacosRestTemplate
+2025-12-26T18:24:33.659+08:00  WARN 41314 --- [           main] com.alibaba.nacos.client.naming          : [NamingHttpClientManager] Destruction of the end
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@3f3a529f[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-12-26T18:24:33.659+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Close current connection 1766744668667_127.0.0.1_62963
+2025-12-26T18:24:33.660+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@598ff2b3[Running, pool size = 32, active threads = 0, queued tasks = 0, completed tasks = 35]
+2025-12-26T18:24:33.660+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@5b1cedfd[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 1]
+2025-12-26T18:24:33.661+08:00  INFO 41314 --- [           main] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2025-12-26T18:24:33.663+08:00  INFO 41314 --- [           main] o.a.d.c.t.m.DefaultExecutorRepository    :  [DUBBO] destroying application executor repository .., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.663+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] Dubbo Application[1.1](hello-consumer-service) has stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.664+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : com.alibaba.nacos.client.config.impl.ClientWorker do shutdown begin
+2025-12-26T18:24:33.664+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : Trying to shutdown transport client com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient@1e3689e7
+2025-12-26T18:24:33.664+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : Trying to shutdown rpc client f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0
+2025-12-26T18:24:33.664+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+2025-12-26T18:24:33.664+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@129c760d[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-12-26T18:24:33.664+08:00  INFO 41314 --- [           main] com.alibaba.nacos.common.remote.client   : Close current connection 1766744667857_127.0.0.1_62959
+2025-12-26T18:24:33.666+08:00  WARN 41314 --- [tor-127.0.0.1-1] c.a.n.c.remote.client.grpc.GrpcClient    : [1766744667857_127.0.0.1_62959]Ignore error event,isRunning:false,isAbandon=false
+2025-12-26T18:24:33.666+08:00  INFO 41314 --- [           main] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@48c3a0ef[Running, pool size = 32, active threads = 1, queued tasks = 0, completed tasks = 96]
+2025-12-26T18:24:33.666+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : Remove rpc client f1bc417a-fbf0-4b08-89bc-9670d1ae9737_config-0
+2025-12-26T18:24:33.666+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : Shutdown executor java.util.concurrent.ScheduledThreadPoolExecutor@667dd150[Running, pool size = 4, active threads = 1, queued tasks = 1, completed tasks = 2]
+2025-12-26T18:24:33.666+08:00  INFO 41314 --- [           main] c.a.n.client.config.impl.ClientWorker    : com.alibaba.nacos.client.config.impl.ClientWorker do shutdown stop
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.apache.dubbo.rpc.model.FrameworkModel  :  [DUBBO] Destroying default framework model: Dubbo Framework[1], dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.apache.dubbo.rpc.model.FrameworkModel  :  [DUBBO] Dubbo Framework[1] is destroying ..., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] Dubbo Application[1.0](DUBBO_INTERNAL_APPLICATION) is stopping., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.0.0] is stopping., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.a.d.c.deploy.DefaultModuleDeployer     :  [DUBBO] Dubbo Module[1.0.0] has stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.a.d.registry.support.RegistryManager   :  [DUBBO] Close all registries [], dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.a.d.c.t.m.DefaultExecutorRepository    :  [DUBBO] destroying application executor repository .., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.667+08:00  INFO 41314 --- [           main] o.a.d.c.d.DefaultApplicationDeployer     :  [DUBBO] Dubbo Application[1.0](DUBBO_INTERNAL_APPLICATION) has stopped., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.668+08:00  INFO 41314 --- [           main] o.apache.dubbo.rpc.model.FrameworkModel  :  [DUBBO] Dubbo Framework[1] is destroyed, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.668+08:00  INFO 41314 --- [           main] o.apache.dubbo.rpc.model.FrameworkModel  :  [DUBBO] Reset global default framework from Dubbo Framework[1] to null, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.668+08:00  INFO 41314 --- [           main] o.a.d.c.r.GlobalResourcesRepository      :  [DUBBO] Destroying global resources ..., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.668+08:00  INFO 41314 --- [           main] o.a.d.c.r.GlobalResourcesRepository      :  [DUBBO] Dubbo is completely destroyed, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.668+08:00  INFO 41314 --- [           main] o.a.d.c.t.m.FrameworkExecutorRepository  :  [DUBBO] destroying framework executor repository .., dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.669+08:00  INFO 41314 --- [           main] o.a.d.c.s.c.DubboSpringInitializer       :  [DUBBO] Unbind Dubbo Module[1.1.1] from spring container: org.springframework.beans.factory.support.DefaultListableBeanFactory@63cd2cd2, dubbo version: 3.2.0, current host: 192.168.31.81
+2025-12-26T18:24:33.689+08:00 ERROR 41314 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to check the status of the service cloud.tangyuan.hellocommon.HelloService. No provider available for the service cloud.tangyuan.hellocommon.HelloService from the url consumer://192.168.31.81/cloud.tangyuan.hellocommon.HelloService?application=hello-consumer-service&background=false&dubbo=2.0.2&executor-management-mode=isolation&file-cache=true&interface=cloud.tangyuan.hellocommon.HelloService&methods=sayHello,sayHello&pid=41314&qos.enable=true&register.ip=192.168.31.81&release=3.2.0&revision=0.0.1-SNAPSHOT&side=consumer&sticky=false&timestamp=1766744669346&unloadClusterRelated=false to the consumer 192.168.31.81 use dubbo version 3.2.0
+	at org.apache.dubbo.config.ReferenceConfig.checkInvokerAvailable(ReferenceConfig.java:640) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:304) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:231) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroyReference(SimpleReferenceCache.java:265) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:218) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.destroy(SimpleReferenceCache.java:242) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:414) ~[dubbo-3.2.0.jar:3.2.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4783) ~[na:na]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:389) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.startSync(DefaultModuleDeployer.java:170) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:142) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:113) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:102) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:47) ~[dubbo-3.2.0.jar:3.2.0]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:413) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:587) ~[spring-context-6.0.4.jar:6.0.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-3.0.2.jar:3.0.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291) ~[spring-boot-3.0.2.jar:3.0.2]
+	at cloud.tangyuan.helloconsumer.HelloConsumerApplication.main(HelloConsumerApplication.java:14) ~[classes/:na]
+
+2025-12-26T18:24:34.004+08:00  WARN 41314 --- [       Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2025-12-26T18:24:34.005+08:00  WARN 41314 --- [       Thread-7] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2025-12-26T18:24:34.005+08:00  WARN 41314 --- [       Thread-7] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2025-12-26T18:24:34.006+08:00  WARN 41314 --- [       Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.783 s
+[INFO] Finished at: 2025-12-26T18:24:34+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.0.2:run (default-cli) on project hello-consumer: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

@@ -21,7 +21,7 @@ import java.util.List;
 
 @RestController
 public class HelloConsumerController {
-    @DubboReference
+    @DubboReference(check = false)
     private final HelloService helloService;
 
     private final HelloFeignService helloFeignService;

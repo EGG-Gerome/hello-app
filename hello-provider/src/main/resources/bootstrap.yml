@@ -9,6 +9,10 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
         ip: 127.0.0.1
+        enabled: false  # 禁用Spring Cloud自动服务注册，避免与Dubbo重复注册
+        metadata:
+          appname: ${spring.application.name}
+          application: ${spring.application.name}
       config:
         server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
         file-extension: yml
