@@ -105,6 +105,18 @@
             <groupId>cloud.tangyuan</groupId>
             <artifactId>hello-common</artifactId>
         </dependency>
+        
+        <!-- Apache Dubbo 3.2.x (Spring Boot 3 compatible) -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+            <version>3.2.0</version>
+        </dependency>
 
     </dependencies>
 

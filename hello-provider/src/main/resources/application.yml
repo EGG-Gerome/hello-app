@@ -31,7 +31,6 @@ management:
     web:
       exposure:
         include: '*'
-
 # Dubbo 配置
 dubbo:
   # 应用配置
@@ -47,7 +46,4 @@ dubbo:
   # 注册中心配置，使用 Nacos 作为注册中心
   registry:
     address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
-  # 服务配置
-  provider:
-    timeout: 3000
-    retries: 2
+

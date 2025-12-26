@@ -2,6 +2,9 @@
 spring:
   application:
     name: hello-consumer-service
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
 
 provider:
   name: 127.0.0.1:8081
@@ -34,3 +37,17 @@ feign:
       hello-consumer-service:
         connectTimeout: 2000
         readTimeout: 10000
+
+# Dubbo 配置
+dubbo:
+  application:
+    name: ${spring.application.name}
+  cloud:
+    subscribed-service: hello-provider-service
+  registry:
+    address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
+    username: nacos
+    password: nacos
+  protocol:
+    name: dubbo
+    port: -1
