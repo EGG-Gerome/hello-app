@@ -1,8 +1,10 @@
 package cloud.tangyuan.helloconsumer;
 
+import cloud.tangyuan.hellocommon.HelloService;
 import cloud.tangyuan.hellocommon.Name;
 import cloud.tangyuan.hellocommon.Result;
 import cloud.tangyuan.hellocommon.User;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
@@ -19,6 +21,8 @@ import java.util.List;
 
 @RestController
 public class HelloConsumerController {
+    @DubboReference
+    private final HelloService helloService;
 
     private final HelloFeignService helloFeignService;
     private final DiscoveryClient discoveryClient;
@@ -32,27 +36,39 @@ public class HelloConsumerController {
             DiscoveryClient discoveryClient,
             LoadBalancerClient loadBalancerClient,
             @Qualifier("loadBalancedRestTemplate") RestTemplate loadBalancedRestTemplate,
-            RestTemplate restTemplate) {
+            RestTemplate restTemplate,
+            HelloService helloService) {
         this.helloFeignService = helloFeignService;
         this.discoveryClient = discoveryClient;
         this.loadBalancerClient = loadBalancerClient;
         this.loadBalancedRestTemplate = loadBalancedRestTemplate;
         this.restTemplate = restTemplate;
+        this.helloService = helloService;
     }
 
-    // 使用 Feign 调用
+    // 使用 Dubbo 调用
     @GetMapping("/enter/{username}")
-    public String sayHello(@PathVariable String username) {
-        // 调用 hello-provider 微服务
-        String response = helloFeignService.sayHello(username);
-        // 添加消费者自身的信息
-        return "HelloConsumer received: " + response;
+    public String sayHello(@PathVariable String username){
+        return helloService.sayHello(username);
     }
-
     @GetMapping("/enter")
     public String sayHello(){
-        return "HelloConsumer received nothing\n" + "Hello " + helloFeignService.sayHello();
+        return helloService.sayHello();
     }
+
+//    // 使用 Feign 调用
+//    @GetMapping("/enter/{username}")
+//    public String sayHello(@PathVariable String username) {
+//        // 调用 hello-provider 微服务
+//        String response = helloFeignService.sayHello(username);
+//        // 添加消费者自身的信息
+//        return "HelloConsumer received: " + response;
+//    }
+//
+//    @GetMapping("/enter")
+//    public String sayHello(){
+//        return "HelloConsumer received nothing\n" + "Hello " + helloFeignService.sayHello();
+//    }
 
     // 使用 DiscoveryClient 调用
     @GetMapping("/enter01/{username}")

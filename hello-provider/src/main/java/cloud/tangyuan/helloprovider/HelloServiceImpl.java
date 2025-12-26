@@ -9,4 +9,8 @@ public class HelloServiceImpl implements HelloService {
     public String sayHello(String username) {
         return "Hello, %s".formatted(username);
     }
+    @Override
+    public String sayHello() {
+        return "Hello, Friend";
+    }
 }

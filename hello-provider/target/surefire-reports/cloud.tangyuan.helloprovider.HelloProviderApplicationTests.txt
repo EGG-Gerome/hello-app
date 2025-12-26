@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: cloud.tangyuan.helloprovider.HelloProviderApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.802 s -- in cloud.tangyuan.helloprovider.HelloProviderApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.682 s -- in cloud.tangyuan.helloprovider.HelloProviderApplicationTests

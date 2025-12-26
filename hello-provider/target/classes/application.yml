@@ -6,7 +6,11 @@ server:
 spring:
   application:
     name: hello-provider-service
-  # Nacos 服务器的地址
+  # Spring Boot 主程序启动相关的全局核心配置
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+    # Nacos 服务器的地址
   cloud:
     nacos:
       discovery:
@@ -30,21 +34,15 @@ management:
 
 # Dubbo 配置
 dubbo:
-  # 应用配置
   application:
     name: ${spring.application.name}
-  # 扫描包，用于扫描 Dubbo 服务实现
   scan:
-    base-packages: cloud.tangyuan.helloprovider.service
-  # 协议配置
+    base-packages: cloud.tangyuan.helloprovider
   protocol:
     name: dubbo
     port: -1  # -1 表示随机端口
-  # 注册中心配置，使用 Nacos 作为注册中心
   registry:
     address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
-  # 服务配置
   provider:
     timeout: 3000
     retries: 2
-

@@ -90,17 +90,16 @@
             <artifactId>spring-cloud-openfeign-core</artifactId>
         </dependency>
         
-        <!-- Dubbo Spring Boot Starter -->
+        <!-- Apache Dubbo 3.2.x (Spring Boot 3 compatible) -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>3.1.8</version>
+            <version>3.2.0</version>
         </dependency>
-        <!-- Dubbo Registry Nacos -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-registry-nacos</artifactId>
-            <version>3.1.8</version>
+            <version>3.2.0</version>
         </dependency>
 
     </dependencies>
