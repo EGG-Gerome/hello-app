@@ -21,8 +21,8 @@ import java.util.List;
 
 @RestController
 public class HelloConsumerController {
-    @DubboReference(check = false)
-    private final HelloService helloService;
+    @DubboReference(check = false, timeout = 3000, retries = 3)
+    private HelloService helloService;
 
     private final HelloFeignService helloFeignService;
     private final DiscoveryClient discoveryClient;
@@ -36,14 +36,12 @@ public class HelloConsumerController {
             DiscoveryClient discoveryClient,
             LoadBalancerClient loadBalancerClient,
             @Qualifier("loadBalancedRestTemplate") RestTemplate loadBalancedRestTemplate,
-            RestTemplate restTemplate,
-            HelloService helloService) {
+            RestTemplate restTemplate) {
         this.helloFeignService = helloFeignService;
         this.discoveryClient = discoveryClient;
         this.loadBalancerClient = loadBalancerClient;
         this.loadBalancedRestTemplate = loadBalancedRestTemplate;
         this.restTemplate = restTemplate;
-        this.helloService = helloService;
     }
 
     // 使用 Dubbo 调用
@@ -51,6 +49,7 @@ public class HelloConsumerController {
     public String sayHello(@PathVariable String username){
         return helloService.sayHello(username);
     }
+    
     @GetMapping("/enter")
     public String sayHello(){
         return helloService.sayHello();

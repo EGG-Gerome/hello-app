@@ -52,11 +52,13 @@ dubbo:
       application: ${spring.application.name}  # 显式传递应用名给Nacos
       appname: ${spring.application.name}  # 兼容不同版本的Nacos客户端
       dubbo.application.name: ${spring.application.name}  # Dubbo应用名称
-  # 扫描包，用于扫描 Dubbo 服务实现
-  scan:
-    base-packages: cloud.tangyuan.helloconsumer
   qos:
     enable: false  # 禁用QOS服务，避免端口22222冲突
+  # 全局超时和重试配置
+  consumer:
+    timeout: 3000  # 全局消费者超时时间
+    retries: 3  # 全局重试次数
+    check: false  # 启动时不检查服务是否存在
   cloud:
     subscribed-service: hello-provider-service
   registry:

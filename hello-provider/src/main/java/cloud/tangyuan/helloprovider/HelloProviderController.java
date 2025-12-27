@@ -46,7 +46,7 @@ public class HelloProviderController {
         System.out.println("Before sleep: " + System.currentTimeMillis());
         String msg = null;
         try{
-            TimeUnit.SECONDS.sleep(60);
+            TimeUnit.SECONDS.sleep(1); // 修改为1秒，避免长时间阻塞
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
