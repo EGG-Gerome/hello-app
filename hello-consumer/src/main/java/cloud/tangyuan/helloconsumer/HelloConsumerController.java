@@ -47,12 +47,22 @@ public class HelloConsumerController {
     // 使用 Dubbo 调用
     @GetMapping("/enter/{username}")
     public String sayHello(@PathVariable String username){
-        return helloService.sayHello(username);
+        try {
+            return helloService.sayHello(username);
+        } catch (Exception e) {
+            // 捕获Dubbo超时异常或其他异常
+            return "错误: " + e.getClass().getSimpleName() + " - " + e.getMessage();
+        }
     }
     
     @GetMapping("/enter")
     public String sayHello(){
-        return helloService.sayHello();
+        try {
+            return helloService.sayHello();
+        } catch (Exception e) {
+            // 捕获Dubbo超时异常或其他异常
+            return "错误: " + e.getClass().getSimpleName() + " - " + e.getMessage();
+        }
     }
 
 //    // 使用 Feign 调用
