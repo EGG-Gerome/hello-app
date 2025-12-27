@@ -171,10 +171,10 @@ public class HelloConsumerController {
         return helloFeignService.testName(name);
     }
 
-    @GetMapping("testuser")
+    @GetMapping("/testuser")
     public Result testUser(){
         Name name = new Name("Gerome", "Windsor");
-        User user = new User(01, name);
-        return helloFeignService.testUser(user);
+        User user = new User(1, name);
+        return helloService.testUser(user);
     }
 }
