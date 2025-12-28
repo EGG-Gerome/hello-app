@@ -46,6 +46,8 @@ dubbo:
   provider:
     timeout: 3000
     retries: 3
+    loadbalance: roundrobin
+    weight: 100
 
 # Nacos客户端配置
 nacos:

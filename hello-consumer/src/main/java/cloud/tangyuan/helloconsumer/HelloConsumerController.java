@@ -21,7 +21,7 @@ import java.util.List;
 
 @RestController
 public class HelloConsumerController {
-    @DubboReference(check = false, timeout = 3000, retries = 3)
+    @DubboReference(check = false, timeout = 3000, retries = 3, loadbalance = "roundrobin")
     private HelloService helloService;
 
     private final HelloFeignService helloFeignService;

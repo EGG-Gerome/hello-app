@@ -59,6 +59,7 @@ dubbo:
     timeout: 3000  # 全局消费者超时时间
     retries: 3  # 全局重试次数
     check: false  # 启动时不检查服务是否存在
+    loadbalance: roundrobin
   cloud:
     subscribed-service: hello-provider-service
   registry:
