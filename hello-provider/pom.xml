@@ -107,6 +107,11 @@
             <artifactId>okhttp</artifactId>
             <version>4.11.0</version>
         </dependency>
+        <!-- Add Sentinel-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
 
     </dependencies>
 

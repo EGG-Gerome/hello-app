@@ -9,6 +9,9 @@ spring:
     nacos:
       discovery:
         enabled: false  # 禁用Spring Cloud自动服务发现，避免与Dubbo冲突
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858
 
 provider:
   name: 127.0.0.1:8081
