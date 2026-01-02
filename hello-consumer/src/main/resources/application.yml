@@ -49,12 +49,15 @@ feign:
 dubbo:
   application:
     name: ${spring.application.name}
+    owner: developer
+    organization: cloud.tangyuan
     register-mode: all  # 同时注册接口级和应用级
     register-consumer: true  # Dubbo 3.2.0中启用消费者注册的正确配置
     parameters:
       application: ${spring.application.name}  # 显式传递应用名给Nacos
       appname: ${spring.application.name}  # 兼容不同版本的Nacos客户端
       dubbo.application.name: ${spring.application.name}  # Dubbo应用名称
+      q3s.service-discovery.migration.step: APPLICATION_FIRST
   qos:
     enable: false  # 禁用QOS服务，避免端口22222冲突
   # 全局超时和重试配置
@@ -69,12 +72,21 @@ dubbo:
     address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
     username: nacos
     password: nacos
+    timeout: 10000
     parameters:
       application: ${spring.application.name}  # 在注册中心配置中显式指定应用名称
       appname: ${spring.application.name}
+      registry.type: service
+      registry.simplified: false
+      registry.useAsConfigCenter: false
+      registry.useAsMetadataCenter: false
   protocol:
     name: dubbo
     port: -1
+  monitor:
+    protocol: registry
+  metadata-report:
+    address: nacos://127.0.0.1:8810
 
 # Nacos客户端配置
 nacos:

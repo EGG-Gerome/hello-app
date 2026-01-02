@@ -4,6 +4,8 @@ import cloud.tangyuan.hellocommon.HelloService;
 import cloud.tangyuan.hellocommon.Name;
 import cloud.tangyuan.hellocommon.Result;
 import cloud.tangyuan.hellocommon.User;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -45,24 +47,46 @@ public class HelloConsumerController {
     }
 
     // 使用 Dubbo 调用
+    @SentinelResource(value = "enter", blockHandler = "handleBlock",
+    blockHandlerClass = MyBlockHandler.class,
+    fallback = "handleException",
+    fallbackClass = MyExceptionHandler.class,
+    exceptionsToIgnore = {NullPointerException.class})
     @GetMapping("/enter/{username}")
     public String sayHello(@PathVariable String username){
-        try {
-            return helloService.sayHello(username);
-        } catch (Exception e) {
-            // 捕获Dubbo超时异常或其他异常
-            return "错误: " + e.getClass().getSimpleName() + " - " + e.getMessage();
+        if(username.equals("Monster")) {
+            throw new IllegalArgumentException(("Illegal Argument"));
         }
+        return helloService.sayHello(username);
     }
-    
+
+    @SentinelResource(value = "enter", blockHandler = "handleBlock",
+            blockHandlerClass = MyBlockHandler.class,
+            fallback = "handleException",
+            fallbackClass = MyExceptionHandler.class,
+            exceptionsToIgnore = {NullPointerException.class})
     @GetMapping("/enter")
     public String sayHello(){
-        try {
-            return helloService.sayHello();
-        } catch (Exception e) {
-            // 捕获Dubbo超时异常或其他异常
-            return "错误: " + e.getClass().getSimpleName() + " - " + e.getMessage();
-        }
+        return helloService.sayHello();
+    }
+
+
+    public String handleBlock(String username, BlockException blockException){
+        blockException.printStackTrace();
+        return "%s, request id blocked".formatted(username);
+    }
+    public String handleBlock(BlockException blockException){
+        blockException.printStackTrace();
+        return "Friend, request is blocked ";
+    }
+    
+    public String handleException(String username, Throwable throwable){
+        throwable.printStackTrace();
+        return "%s, something is wrong.".formatted(username);
+    }
+    public String handleException( Throwable throwable){
+        throwable.printStackTrace();
+        return "Friend, something is wrong.";
     }
 
 //    // 使用 Feign 调用

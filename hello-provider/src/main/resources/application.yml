@@ -22,10 +22,14 @@ dubbo:
   # 应用配置
   application:
     name: ${spring.application.name}
+    owner: developer
+    organization: cloud.tangyuan
+    register-mode: all
     parameters:
       application: ${spring.application.name}  # 显式传递应用名给Nacos
       appname: ${spring.application.name}  # 兼容不同版本的Nacos客户端
       dubbo.application.name: ${spring.application.name}  # Dubbo应用名称
+      q3s.service-discovery.migration.step: APPLICATION_FIRST
   # 禁用QOS服务，避免端口22222冲突
   qos:
     enable: false
@@ -39,9 +43,14 @@ dubbo:
   # 注册中心配置，使用 Nacos 作为注册中心
   registry:
     address: nacos://127.0.0.1:8810?backup=127.0.0.1:8820,127.0.0.1:8830
+    timeout: 10000
     parameters:
       application: ${spring.application.name}  # 在注册中心配置中显式指定应用名称
       appname: ${spring.application.name}
+      registry.type: service
+      registry.simplified: false
+      registry.useAsConfigCenter: false
+      registry.useAsMetadataCenter: false
   # 超时时间和重试次数
   provider:
     timeout: 3000
