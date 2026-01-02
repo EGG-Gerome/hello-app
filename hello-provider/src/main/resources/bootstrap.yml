@@ -17,6 +17,11 @@ spring:
         server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
         file-extension: yml
         refresh-enabled: true
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858  # Sentinel控制台地址
+        port: 8721  # 客户端与控制台通信的端口，使用与consumer不同的8721端口
+      web-context-unify: false  # 关闭web上下文统一，区分不同URL资源
 management:
   endpoints:
     web:

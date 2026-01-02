@@ -11,11 +11,9 @@ spring:
         enabled: false  # 禁用Spring Cloud自动服务发现，避免与Dubbo冲突
     sentinel:
       transport:
-        dashboard: 127.0.0.1:8858
-
-provider:
-  name: 127.0.0.1:8081
-
+        dashboard: 127.0.0.1:8858  # Sentinel控制台地址
+        port: 8720  # 客户端与控制台通信的端口，使用未被占用的8720端口
+      web-context-unify: false  # 关闭web上下文统一，区分不同URL资源
 logging:
   level:
 #    包名天然用.分隔，不管是 YAML 还是 Properties，这个.都必须保留；
@@ -54,7 +52,6 @@ dubbo:
     register-mode: all  # 同时注册接口级和应用级
     register-consumer: true  # Dubbo 3.2.0中启用消费者注册的正确配置
     parameters:
-      application: ${spring.application.name}  # 显式传递应用名给Nacos
       appname: ${spring.application.name}  # 兼容不同版本的Nacos客户端
       dubbo.application.name: ${spring.application.name}  # Dubbo应用名称
       q3s.service-discovery.migration.step: APPLICATION_FIRST
@@ -76,15 +73,12 @@ dubbo:
     parameters:
       application: ${spring.application.name}  # 在注册中心配置中显式指定应用名称
       appname: ${spring.application.name}
-      registry.type: service
       registry.simplified: false
       registry.useAsConfigCenter: false
       registry.useAsMetadataCenter: false
   protocol:
     name: dubbo
     port: -1
-  monitor:
-    protocol: registry
   metadata-report:
     address: nacos://127.0.0.1:8810
 

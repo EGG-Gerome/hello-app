@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-@FeignClient(name = "hello-provider-service", url = "http://${provider.name}", path = "/user",
+@FeignClient(name = "hello-provider-service", path = "/user",
         configuration = HelloFeignConfig.class,     // 指定 HelloFeignConfig 日志配置类
 //        fallback = HelloFeignFallback.class,        // 指定回调类，和 fallbackFactory 只能存在一个
         fallbackFactory = HelloFeignFallbackFactory.class)
