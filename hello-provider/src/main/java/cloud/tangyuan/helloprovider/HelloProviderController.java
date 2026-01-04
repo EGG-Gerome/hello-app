@@ -4,6 +4,8 @@ package cloud.tangyuan.helloprovider;
 import cloud.tangyuan.hellocommon.Name;
 import cloud.tangyuan.hellocommon.Result;
 import cloud.tangyuan.hellocommon.User;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;
@@ -66,5 +68,18 @@ public class HelloProviderController {
         System.out.println("id: %s, name: %s %s".formatted(user.getId(),
                 user.getName().getFirstname(), user.getName().getLastname()));
         return new Result(100, "OK");
+    }
+    
+    // 用于测试Sentinel @SentinelResource注解的简单REST端点
+    @GetMapping("/test-sentinel")
+    @SentinelResource(value = "say", blockHandler = "handleTestBlock")
+    public String testSentinel() {
+        return "Test Sentinel Resource: say<br>Service Name: %s<br>Service Port: %s".formatted(serviceName, servicePort);
+    }
+    
+    // 处理testSentinel方法的流控情况
+    public String handleTestBlock(BlockException blockException) {
+        blockException.printStackTrace();
+        return "Test request is blocked by Sentinel";
     }
 }

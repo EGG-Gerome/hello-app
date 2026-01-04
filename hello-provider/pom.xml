@@ -78,6 +78,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!-- Spring Boot AOP Starter，用于支持@SentinelResource注解 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
 
         <!-- hello-common -->
         <dependency>
@@ -106,10 +111,22 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-        <!-- Sentinel Dubbo Adapter -->
+        <!-- Dubbo 与 Sentinel 整合的依赖 -->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-apache-dubbo-adapter</artifactId>
+            <version>1.8.6</version>
+        </dependency>
+        <!--微服务连接到 Sentinel 控制台的依赖-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+            <version>1.8.6</version>
+        </dependency>
+        <!-- Sentinel Annotation AspectJ 依赖，用于 @SentinelResource 注解 -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-annotation-aspectj</artifactId>
             <version>1.8.6</version>
         </dependency>
 

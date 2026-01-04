@@ -3,6 +3,8 @@ package cloud.tangyuan.helloprovider;
 import cloud.tangyuan.hellocommon.HelloService;
 import cloud.tangyuan.hellocommon.Result;
 import cloud.tangyuan.hellocommon.User;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -15,14 +17,28 @@ public class HelloServiceImpl implements HelloService {
     private String serviceName;
 
     @Override
+    @SentinelResource(value = "say", blockHandler = "handleBlock")
     public String sayHello(String username){
         return "Hello, %s<br>Service Name: %s<br>Service Port: %s".formatted(username, serviceName, servicePort);
     }
 
     @Override
+    @SentinelResource(value = "say", blockHandler = "handleBlock")
     public String sayHello() {
         return "Hello, Friends<br>Service Name: %s<br>Service Port: %s".formatted(serviceName, servicePort);
     }
+
+    // 处理请求被拒绝的情况
+    public String handleBlock(String username, BlockException blockException){
+        blockException.printStackTrace();
+        return "%s, request is blocked.".formatted(username);
+    }
+    public String handleBlock(BlockException blockException){
+        blockException.printStackTrace();
+        return "Friend, request is blocked.";
+    }
+
+
     //    @Override
 //    public String sayHello(String username) {
 //        try {

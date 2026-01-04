@@ -57,6 +57,9 @@ dubbo:
     retries: 3
     loadbalance: roundrobin
     weight: 100
+  # 禁用Sentinel Dubbo过滤器，解决初始化时的日志空指针问题
+  provider.filter: "-sentinel.dubbo.provider.filter"
+  consumer.filter: "-sentinel.dubbo.consumer.filter"
 
 # Nacos客户端配置
 nacos:
