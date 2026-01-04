@@ -14,6 +14,26 @@ spring:
         dashboard: 127.0.0.1:8858  # Sentinel控制台地址
         port: 8720  # 客户端与控制台通信的端口，使用未被占用的8720端口
       web-context-unify: false  # 关闭web上下文统一，区分不同URL资源
+      datasource:
+        ds01:     # 自定义的数据源名字，不重复即可
+          nacos:
+            server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830 # Nacos 服务器地址
+            data-id: hello-consumer-ds01 # Nacos 配置单元的 ID
+            group-id: DEFAULT_GROUP # 配置单元所在的分组
+            rule-type: flow  # 规则类型，这里是流控规则
+        ds02: # 自定义的数据源名字，不重复即可
+          nacos:
+            server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830 # Nacos 服务器地址
+            data-id: hello-consumer-ds02 # Nacos 配置单元的 ID
+            group-id: DEFAULT_GROUP # 配置单元所在的分组
+            rule-type: degrade  # 规则类型，这里是熔断规则
+        ds03: # 自定义的数据源名字，不重复即可
+          nacos:
+            server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830 # Nacos 服务器地址
+            data-id: hello-consumer-ds03 # Nacos 配置单元的 ID
+            group-id: DEFAULT_GROUP # 配置单元所在的分组
+            rule-type: system  # 规则类型，这里是系统规则
+
 logging:
   level:
 #    包名天然用.分隔，不管是 YAML 还是 Properties，这个.都必须保留；
