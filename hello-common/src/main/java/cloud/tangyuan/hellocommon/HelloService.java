@@ -8,4 +8,6 @@ public interface HelloService {
     public String sayHello(String username, String key);
     // consumer 通过此方法向 provider 注册 CallbackListener
     public void addListener(String key, CallbackListener listener);
+    // Consumer 异步调用 provider 的接口
+    public String doTask(String longTask);
 }

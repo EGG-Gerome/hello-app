@@ -5,6 +5,8 @@ import cloud.tangyuan.hellocommon.Name;
 import cloud.tangyuan.hellocommon.Result;
 import cloud.tangyuan.hellocommon.User;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.Method;
+import org.apache.dubbo.rpc.RpcContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,11 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import java.awt.*;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @RestController
 public class HelloConsumerController {
-    @DubboReference(check = false, timeout = 3000, retries = 3)
+    // 指定异步调用 doTask() 方法，timeout设置为10秒，大于doTask的5秒执行时间
+    @DubboReference(check = false, timeout = 10000, retries = 3,
+            methods = {@Method(name = "doTask", async = true)})
     private final HelloService helloService;
 
     private final HelloFeignService helloFeignService;
@@ -48,6 +54,27 @@ public class HelloConsumerController {
         this.helloService = helloService;
     }
 
+
+    @GetMapping("/testasync")
+    public String testAsync(){
+        // 此方法立即返回 null
+        helloService.doTask("保存文件");
+
+        // 获得存放异步调用结果的 CompletableFuture 对象
+        CompletableFuture<String> helloFuture =
+                RpcContext.getContext().getCompletableFuture();
+
+        // 指定收到异步调用结果时的操作，参数 result 表示调用结果
+        helloFuture.whenComplete((result, exception) -> {
+            if(exception == null) {
+                System.out.println(result);
+            } else {
+                exception.printStackTrace();
+            }
+        });
+       return "任务已经下达";
+    }
+
     // 使用 Dubbo 调用
     @GetMapping("/enter/{username}")
     public String sayHello(@PathVariable String username){
@@ -63,9 +90,15 @@ public class HelloConsumerController {
     // 该注解表示 Spring 框架创建了控制器对象后就会调用 init() 方法
     @PostConstruct
     public void init(){
-//         向 provider 注册 MyCallbackListener 对象，以 servicePort 作为 key
-        helloService.addListener(servicePort,
-                new MyCallbackListener());
+        try {
+            // 向 provider 注册 MyCallbackListener 对象，以 servicePort 作为 key
+            helloService.addListener(servicePort,
+                    new MyCallbackListener());
+            System.out.println("成功注册回调监听器");
+        } catch (Exception e) {
+            System.err.println("初始化回调监听器失败，可能provider尚未完全启动: " + e.getMessage());
+            // 不抛出异常，允许服务继续启动
+        }
     }
     @GetMapping(value = "/callback/{username}")
     public String testCallback(@PathVariable String username){

@@ -16,8 +16,8 @@ import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.config.annotation.Method;
 import org.springframework.beans.factory.annotation.Value;
 
-//@DubboService(timeout = 3000, retries = 3, loadbalance = "roundrobin", weight = 100)
 @DubboService(
+        timeout = 10000, retries = 3, loadbalance = "roundrobin", weight = 100,
         // 指明 addListener() 方法的 listener 参数是回调类型的参数
         methods = {
                 @Method(name = "addListener",
@@ -53,6 +53,15 @@ public class HelloServiceImpl implements HelloService {
         });
         t.setDaemon(true);      // 作为后台线程运行
         t.start();
+    }
+    @Override
+    public String doTask(String longTask){
+        try{
+            Thread.sleep(5000); // sleep 5s，模拟耗时很长的操作
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return "%s已经完成".formatted(longTask);
     }
 
     @Override
