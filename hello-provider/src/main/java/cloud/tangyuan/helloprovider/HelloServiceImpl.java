@@ -1,15 +1,73 @@
 package cloud.tangyuan.helloprovider;
 
+import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.jar.JarEntry;
+
+import cloud.tangyuan.hellocommon.CallbackListener;
 import cloud.tangyuan.hellocommon.HelloService;
 import cloud.tangyuan.hellocommon.Result;
 import cloud.tangyuan.hellocommon.User;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import org.apache.dubbo.config.annotation.Argument;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.apache.dubbo.config.annotation.Method;
 import org.springframework.beans.factory.annotation.Value;
 
-@DubboService(timeout = 3000, retries = 3, loadbalance = "roundrobin", weight = 100)
+//@DubboService(timeout = 3000, retries = 3, loadbalance = "roundrobin", weight = 100)
+@DubboService(
+        // 指明 addListener() 方法的 listener 参数是回调类型的参数
+        methods = {
+                @Method(name = "addListener",
+                arguments = {@Argument(index = 1, callback = true)})
+        }
+)
 public class HelloServiceImpl implements HelloService {
+    // 存放消费者所注册的 CallbackListener 对象
+    private final Map<String, CallbackListener> listeners = new ConcurrentHashMap<>();
+
+    public HelloServiceImpl(){
+        // 创建定时向消费者推送当前时间信息的线程
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true){
+                    try{
+                        for(Map.Entry<String, CallbackListener> entry:
+                        listeners.entrySet()){
+                            try{
+                                // 回调消费者的 CallbackListener 的 report() 方法
+                                entry.getValue().report("Current time: %s".formatted(new Date()));
+                            } catch (Throwable throwable){
+                                listeners.remove(entry.getKey());
+                            }
+                        }
+                        Thread.sleep(5000);  // 通过睡眠定时向消费者发送时间信息
+                    } catch (Throwable throwable){
+                        throwable.printStackTrace();
+                    }
+                }
+            }
+        });
+        t.setDaemon(true);      // 作为后台线程运行
+        t.start();
+    }
+
+    @Override
+    public void addListener(String key,CallbackListener listener){
+        // 加入消费者注册的 CallbackListener 对象
+        listeners.put(key, listener);
+    }
+    @Override
+    public String  sayHello(String userame, String key){
+        CallbackListener listener = listeners.get(key);
+        // 回调消费者 CallbackListener 对象的 report() 方法
+        listener.report("%s打过招呼。".formatted(userame));
+        return "Hello, %s".formatted(userame);
+    }
+
     @Value("${server.port}")
     private String servicePort;
 

@@ -7,6 +7,7 @@ import cloud.tangyuan.hellocommon.User;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @RestController
@@ -55,6 +57,24 @@ public class HelloConsumerController {
     public String sayHello(){
         return helloService.sayHello();
     }
+
+    @Value("${server.port}")
+    private String servicePort;
+    // 该注解表示 Spring 框架创建了控制器对象后就会调用 init() 方法
+    @PostConstruct
+    public void init(){
+//         向 provider 注册 MyCallbackListener 对象，以 servicePort 作为 key
+        helloService.addListener(servicePort,
+                new MyCallbackListener());
+    }
+    @GetMapping(value = "/callback/{username}")
+    public String testCallback(@PathVariable String username){
+        // 调用提供者的 sayHello() 服务方法
+        return helloService.sayHello(username, servicePort);
+    }
+
+
+
 
 //    // 使用 Feign 调用
 //    @GetMapping("/enter/{username}")
