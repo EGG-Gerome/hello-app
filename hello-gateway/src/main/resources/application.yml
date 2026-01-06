@@ -1,0 +1,23 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: hello-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: provider-route
+          uri: http://localhost:8081
+          order: 1      # 路由优先级，数值越小，优先级越高，默认为 0
+          predicates:
+            - Path=/greet/**    # 路径的匹配条件，** 为通配符
+          filters:
+            - RewritePath=/greet/(?<segment>.*), /user/greet/${segment}
+        - id: consumer-route
+          uri: http://localhost:8082
+          order: 1
+          predicates:
+            - Path=/enter/**
+
+

@@ -89,6 +89,13 @@
                 <artifactId>hello-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!-- hello-gateway -->
+            <dependency>
+                <groupId>cloud.tangyuan</groupId>
+                <artifactId>hello-gateway</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

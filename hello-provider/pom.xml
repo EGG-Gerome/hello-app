@@ -84,17 +84,15 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+        </dependency>
         <!-- hello-common -->
         <dependency>
             <groupId>cloud.tangyuan</groupId>
             <artifactId>hello-common</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-openfeign-core</artifactId>
-        </dependency>
-        
         <!-- Apache Dubbo 3.2.x (Spring Boot 3 compatible) -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
