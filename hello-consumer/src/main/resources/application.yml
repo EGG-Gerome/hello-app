@@ -8,7 +8,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        enabled: false  # 禁用Spring Cloud自动服务发现，避免与Dubbo冲突
+        enabled: true  # 启用Nacos服务发现，让Gateway可以发现本服务
     sentinel:
       transport:
         dashboard: 127.0.0.1:8858  # Sentinel控制台地址

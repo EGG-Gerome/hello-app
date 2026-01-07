@@ -5,19 +5,27 @@ spring:
   application:
     name: hello-gateway
   cloud:
+    loadbalancer:
+      enabled: true # 启用 LoadBalancer
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: provider-route
-          uri: http://localhost:8081
+          uri: lb://hello-provider-service
           order: 1      # 路由优先级，数值越小，优先级越高，默认为 0
           predicates:
             - Path=/greet/**    # 路径的匹配条件，** 为通配符
           filters:
             - RewritePath=/greet/(?<segment>.*), /user/greet/${segment}
         - id: consumer-route
-          uri: http://localhost:8082
+          uri: lb://hello-consumer-service
           order: 1
           predicates:
             - Path=/enter/**
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8810,127.0.0.1:8820,127.0.0.1:8830
 
 
